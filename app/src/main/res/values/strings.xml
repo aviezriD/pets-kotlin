@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Mascotas</string>
+
+    <!--login-->
+    <string name="dueno">Dueño Mascota</string>
+    <string name="veterinario">Veterinario</string>
+
+    <!--sign-->
+    <string name="user">Nombre de Usuario </string>
+    <string name="password">Contraseña </string>
+    <string name="initSesion">Iniciar Sesión </string>
+
+    <string name="forget">¿Olvidaste tus datos de inicio de sesión? </string>
+    <string name="help_sign">Obten ayuda.</string>
+
+    <string name="noAccount">¿No tienes cuenta? </string>
+    <string name="registry">Regístrate</string>
+</resources>
