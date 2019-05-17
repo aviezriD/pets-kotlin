@@ -15,4 +15,24 @@
 
     <string name="noAccount">¿No tienes cuenta? </string>
     <string name="registry">Regístrate</string>
+
+
+    <!-- Registry -->
+    <string name="title_registro">Registro de usuarios</string>
+    <string name="nombre">Nombre</string>
+    <string name="app">Apellido Paterno</string>
+    <string name="apm">Apellido Materno</string>
+    <string name="nickname">Nombre de usuario</string>
+    <string name="overname">Nickname</string>
+    <string name="emial">Correo</string>
+    <string name="passwprd">Contraseña</string>
+    <string name="validatepdw">Valida tu contraseña</string>
+    <string name="photo">Foto</string>
+    <string name="registry_button">Registrar </string>
+
+    <!--help-->
+    <string name="title_help">Recuperar Usuario y Contraseña</string>
+    <string name="label_help">Ingresa el correo con el que te registraste y te enviaremos una liga con tus datos para volver a acceder a Mascota.</string>
+    <string name="button_help">Enviar</string>
+
 </resources>

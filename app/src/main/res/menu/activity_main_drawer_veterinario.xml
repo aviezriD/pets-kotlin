@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Mascota">
+        <menu>
+            <item
+                android:id="@+id/proximasCitas"
+                android:icon="@drawable/ic_playlist_add_white_24px"
+                android:title="Próximas Citas" />
+            <item
+                android:id="@+id/historial"
+                android:icon="@drawable/ic_playlist_add_check_white_24px"
+                android:title="Historial de Citas" />
+            <item
+                android:id="@+id/infoCliente"
+                android:icon="@drawable/ic_pets_black_24px"
+                android:title="Información de Clientes" />
+        </menu>
+    </item>
+
+    <item android:title="Veterinario">
+        <menu>
+            <item
+                android:id="@+id/miPerfil"
+                android:icon="@drawable/ic_account_box_black_24px"
+                android:title="Mi Perfil" />
+            <item
+                android:id="@+id/vinculacion"
+                android:icon="@drawable/ic_leak_add_black_24px"
+                android:title="Vinculación" />
+            <item
+                android:id="@+id/tips"
+                android:icon="@drawable/ic_lightbulb_outline_black_24px"
+                android:title="Tips" />
+            <item
+                android:id="@+id/promociones"
+                android:icon="@drawable/ic_new_releases_white_24px"
+                android:title="Promociones" />
+        </menu>
+    </item>
+
+</menu>

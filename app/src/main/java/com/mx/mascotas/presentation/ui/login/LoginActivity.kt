@@ -1,7 +1,6 @@
 package com.mx.mascotas.presentation.ui.login
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import com.mx.mascotas.BR
 import com.mx.mascotas.MascotasAplication
 import com.mx.mascotas.R
