@@ -29,7 +29,7 @@ class RegistryFragment : BaseFragment<FragmentRegistryBinding,RegistryViewModel>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         button2.setOnClickListener {
-            getViewModel().register(email.toString(),pwd_register.toString(),name.toString())
+            getViewModel().register(email.text.toString(),pwd_register.text.toString(),name.text.toString())
         }
     }
 

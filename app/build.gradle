@@ -5,6 +5,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
+
 apply plugin: 'com.google.gms.google-services'
 
 android {
@@ -90,3 +91,4 @@ dependencies {
     //------Gson------
     implementation dependencies.data.gson
 }
+apply plugin: 'com.google.gms.google-services'
