@@ -5,8 +5,9 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "user", foreignKeys = [ForeignKey(entity = Role::class,parentColumns = ["id"],childColumns = ["idRole"])] )
-data class User(@PrimaryKey var id : Int = 0,
+data class User(var id : Int = 0,
                 var idRole : Int = 0,
+                @PrimaryKey var user : String = "",
                 var name : String = "",
                 var lastName : String = "",
                 var email : String = "",
