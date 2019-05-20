@@ -35,4 +35,34 @@
     <string name="label_help">Ingresa el correo con el que te registraste y te enviaremos una liga con tus datos para volver a acceder a Mascota.</string>
     <string name="button_help">Enviar</string>
 
+    <!--main-->
+    <string name="drawer_open">Open Navigation</string>
+    <string name="drawer_close">Close Navigation</string>
+
+
+    <!--pet-->
+    <string name="welcome">Hola bienvenido,\nregistra a tu mascota</string>
+    <string name="sex_1">Maculino</string>
+    <string name="sex_2">Femenino</string>
+    <string name="date_born">Fecha de nacimiento</string>
+    <string name="pet_title">Registro de Mascotas</string>
+    <string name="pet_sub_title">Ingresa los datos de tu mascota.</string>
+    <string name="pet_type">Tipo de mascota:</string>
+    <string name="pet_name">Nombre</string>
+    <string name="pet_race">Raza</string>
+    <string name="pet_color">Color</string>
+    <string name="pet_sex">Sexo de la mascota:</string>
+    <string name="pet_size">Tamaño</string>
+    <string name="pet_number">Número de Registro</string>
+    <string name="pet_chip">No. Chip</string>
+    <string name="pet_main_addr">Señas Particulares</string>
+    <string name="pet_father">Padre</string>
+    <string name="pet_mother">Madre</string>
+    <string name="pet_allergy">Alergia</string>
+    <string name="pet_conditions">Afecciones</string>
+    <string name="pet_weight">Peso (KG) </string>
+    <string name="pet_description">Descripción</string>
+    <string name="pet_photo">Seleccionar foto</string>
+    <string name="pet_registry">Registrar</string>
+
 </resources>

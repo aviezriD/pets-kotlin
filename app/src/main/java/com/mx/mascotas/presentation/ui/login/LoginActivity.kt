@@ -1,6 +1,7 @@
 package com.mx.mascotas.presentation.ui.login
 
 import android.os.Bundle
+import android.view.WindowManager
 import com.mx.mascotas.BR
 import com.mx.mascotas.MascotasAplication
 import com.mx.mascotas.R
@@ -26,6 +27,7 @@ class LoginActivity: BaseActivity<ActivityLoginBinding, LoginViewModel>(), Login
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         super.onCreate(savedInstanceState)
         goFragment(container.id, SplashFragment())
     }

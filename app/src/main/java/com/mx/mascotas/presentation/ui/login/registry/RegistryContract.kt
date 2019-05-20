@@ -5,5 +5,6 @@ interface RegistryContract {
     }
 
     interface ViewModel{
+        fun register(email : String, pwd : String, name: String)
     }
 }
