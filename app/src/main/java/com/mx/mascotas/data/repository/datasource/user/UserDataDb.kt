@@ -6,13 +6,7 @@ import com.mx.mascotas.data.repository.datasource.BaseDb
 import io.reactivex.Observable
 
 class UserDataDb(private val daoUser: UserDao) : BaseDb<User>(daoUser), UserData<User,Unit> {
-    override fun login(user: String, password: String): Observable<User> {
-        return daoUser.getUserSingle(user,password).toObservable()
+    override fun login(user: String,  type: Int): Observable<User> {
+        return daoUser.getUserSingle(user,type).toObservable()
     }
-
-/*    override fun register(user: User): Observable<User> {
-        return daoUser.insertUser(user)
-            .map { user }
-            .toObservable()
-    }*/
 }

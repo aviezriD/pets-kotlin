@@ -5,5 +5,6 @@ interface SignContract {
     }
 
     interface ViewModel{
+        fun login(user : String, pwd : String, type : Int)
     }
 }

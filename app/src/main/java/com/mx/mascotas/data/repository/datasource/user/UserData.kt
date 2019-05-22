@@ -5,6 +5,5 @@ import com.mx.mascotas.data.repository.datasource.BaseData
 import io.reactivex.Observable
 
 interface UserData<T,R>: BaseData<User,R> {
-    fun login(user: String, password: String): Observable<T>
-//    fun register(user: User) : Observable<T>
+    fun login(user: String,type : Int): Observable<T>
 }

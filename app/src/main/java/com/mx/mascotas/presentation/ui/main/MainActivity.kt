@@ -2,9 +2,11 @@ package com.mx.mascotas.presentation.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.lifecycle.LifecycleOwner
 import com.mx.mascotas.BR
 import com.mx.mascotas.MascotasAplication
 import com.mx.mascotas.R
+import com.mx.mascotas.data.repository.UserDataRepository
 import com.mx.mascotas.databinding.ActivityMainBinding
 import com.mx.mascotas.domain.usecase.main.MainUseCaseImpl
 import com.mx.mascotas.presentation.base.BaseActivity
@@ -22,6 +24,7 @@ class MainActivity : BaseActivity<ActivityMainBinding,MainViewModel>(),MainContr
         )
         drawer_nav.addDrawerListener(toggle)
         toggle.syncState()
+
     }
 
     override fun getBindingVariable(): Int {
@@ -33,6 +36,6 @@ class MainActivity : BaseActivity<ActivityMainBinding,MainViewModel>(),MainContr
     }
 
     override fun getViewModel(): MainViewModel {
-        return MainViewModel(scheduler,this,MainUseCaseImpl())
+        return MainViewModel(scheduler,this,MainUseCaseImpl(UserDataRepository(),MascotasAplication.application.appPreferences))
     }
 }

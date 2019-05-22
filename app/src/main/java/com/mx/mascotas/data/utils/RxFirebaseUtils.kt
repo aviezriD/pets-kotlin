@@ -37,6 +37,7 @@ class RxFirebaseUtils {
                     }
                     override fun onCancelled(error: DatabaseError) {
                         if (!emitter.isDisposed) {
+                            Log.e("RxUtils","${error.details}")
                             emitter.onError(RxFirebaseDataException(error))
                         }
 

@@ -11,8 +11,8 @@ interface UserDao : BaseDao<User> {
     @Query("SELECT * FROM user WHERE email =:user AND password=:pass")
     fun getUser(user: String, pass: String): User
 
-    @Query("SELECT * FROM user WHERE email =:user AND password=:pass")
-    fun getUserSingle(user: String, pass: String): Single<User>
+    @Query("SELECT * FROM user WHERE email =:user  AND idRole =:idRole")
+    fun getUserSingle(user: String, idRole : Int): Single<User>
 
     @Insert
     fun insertUser(user: User) : Single<Long>

@@ -35,6 +35,7 @@ abstract class BaseActivity<V : ViewDataBinding, M : BaseViewModel<*,*> > : AppC
         viewModel = getViewModel()
         viewDataBindind.setVariable(getBindingVariable(),viewModel)
         viewDataBindind.executePendingBindings()
+
     }
 
     inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> Unit) {

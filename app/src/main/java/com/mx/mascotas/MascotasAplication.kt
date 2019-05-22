@@ -1,13 +1,16 @@
 package com.mx.mascotas
 
 import android.app.Application
+import android.content.Context
 import androidx.room.Room
 import com.facebook.stetho.Stetho
 import com.google.firebase.FirebaseApp
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.mx.mascotas.data.database.AppDataBase
+import com.mx.mascotas.data.database.entity.Role
 import com.mx.mascotas.data.executor.AppScheduleProvider
 import com.mx.mascotas.data.network.service.ApiService
+import com.mx.mascotas.data.repository.AppPreferenceRepository
 import com.mx.mascotas.data.utils.Constants
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -16,7 +19,8 @@ import java.util.concurrent.Executors
 class MascotasAplication: Application() {
 
     companion object{
-        val scheduler by lazy { AppScheduleProvider() }
+        val executor by lazy {    Executors.newFixedThreadPool( Runtime.getRuntime().availableProcessors() + 1) }
+        val scheduler by lazy { AppScheduleProvider(executor) }
 
         lateinit var application : MascotasAplication
 
@@ -32,14 +36,14 @@ class MascotasAplication: Application() {
 
         val apiService  by lazy { ApiService(apiClientConfig) }
 
-        val executor by lazy { Executors.newSingleThreadExecutor() }
-
     }
 
     val database by lazy {
         Room.databaseBuilder(this, AppDataBase::class.java, Constants.Database.DB_NAME)
             .build()
     }
+
+    val appPreferences by lazy { AppPreferenceRepository(applicationContext.getSharedPreferences("mascotas" ,Context.MODE_PRIVATE)) }
 
     override fun onCreate() {
         super.onCreate()
@@ -50,6 +54,17 @@ class MascotasAplication: Application() {
 
         if (BuildConfig.DEBUG) {
             Stetho.initialize(stetho)
+        }
+        generate()
+    }
+
+    private fun generate(){
+        if (!appPreferences.getIsPreLoad()){
+            executor.execute {
+                database.roleDao().insert(Role(name = "Dueño"))
+                database.roleDao().insert(Role(1,"Veterinario"))
+                appPreferences.setPreLoad(true)
+            }
         }
     }
 

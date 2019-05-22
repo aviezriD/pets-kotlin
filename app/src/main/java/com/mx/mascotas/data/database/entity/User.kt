@@ -18,17 +18,19 @@ data class User(var id : Int = 0,
 
     fun toMap () : Map<String, Any> {
         val result =  HashMap<String, Any>()
+        result["user"] = user
         result["email"] = email
         result["name"] = name
         result["phone"] = phone
         result["password"] = password
         result["token"] = token
+
         return  result
     }
 
     fun toMapSecurity() : Map<String, Any> {
         val result =  HashMap<String, Any>()
-        result["user"] = email
+        result["user"] = user
         result["password"] = password
         return  result
     }

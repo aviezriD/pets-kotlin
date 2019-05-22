@@ -6,6 +6,6 @@ import io.reactivex.Observable
 
 class RegistryUseCaseImpl(private var userRepository: UserRepository): RegistryUseCase {
     override fun register(user: User): Observable<Boolean> {
-        return userRepository.register(user)
+        return userRepository.register(user) //register in firebase
     }
 }

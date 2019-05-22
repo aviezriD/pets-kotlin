@@ -8,38 +8,78 @@ import com.mx.mascotas.data.database.entity.User
 import com.mx.mascotas.data.repository.ScheduleProvider
 import com.mx.mascotas.domain.usecase.registry.RegistryUseCase
 import com.mx.mascotas.presentation.base.BaseViewModel
+import com.mx.mascotas.presentation.ui.utils.Constants
 
 class RegistryViewModel(scheduleProvider: ScheduleProvider,
                         navigator: RegistryContract.Navigator,
                         useCase: RegistryUseCase):
     BaseViewModel<RegistryContract.Navigator,RegistryUseCase>(scheduleProvider,navigator,useCase),RegistryContract.ViewModel {
 
-    val validate = ObservableField<String>()
-    val mutable = MutableLiveData<String>()
+    var validatePassword = MutableLiveData<String>()
+    var user = MutableLiveData<String>()
+    var name = MutableLiveData<String>()
+    var email = MutableLiveData<String>()
+    var result = MutableLiveData<Pair<Int,String>>()
 
-    override fun register(user: String,email: String, pwd: String, pwd2: String, name: String) {
-        if (pwd == pwd2){
-            val user = User(0,0,user = user ,name = name,email = email,password = pwd)
-            Log.i("RegistryViewModel",Gson().toJson(user))
-            compositeDisposable.add(
-                useCase.register(user)
-                    .subscribeOn(scheduleProvider.io())
-                    .observeOn(scheduleProvider.ui())
-                    .subscribe({
-                        Log.i("RegistryViewModel","success")
-                    },{
-                        it.printStackTrace()
-                        Log.e("RegistryViewModel","fail")
-                    })
-            )
+    override fun register(user: String,email: String, pwd: String, pwd2: String, name: String,type : Int) {
+        resetFields()
+
+        if (user.isNotEmpty()){
+            if (name.isNotEmpty()){
+                if (email.isNotEmpty()){
+                    if(pwd.isNotEmpty() && pwd2.isNotEmpty()){
+                        if (pwd.length > 6){
+                            if (pwd == pwd2){
+                                val user = User(0,type,user = user ,name = name,email = email,password = pwd)
+                                Log.i("RegistryViewModel",Gson().toJson(user))
+                                compositeDisposable.add(
+                                    useCase.register(user)
+                                        .subscribeOn(scheduleProvider.io())
+                                        .observeOn(scheduleProvider.ui())
+                                        .subscribe({
+                                            Log.i("RegistryViewModel","success")
+                                            if ( it){
+                                                result.value = Pair(0,Constants.REGISTRY.SUCCESS)
+                                            }else
+                                                result.value = Pair(0,Constants.REGISTRY.EXIST_USER)
+
+                                        },{it.printStackTrace()
+                                            result.value = Pair(-1,"")
+                                            Log.e("RegistryViewModel","fail")
+                                        })
+                                )
+                            }else{
+                                validatePassword.value = Constants.REGISTRY.DIFERENT_FIELD
+                                Log.i("RegistryViewModel","entra")
+                            }
+                        }else{
+                            validatePassword.value = Constants.REGISTRY.INVALIDATE_FIELD
+                        }
+
+                    }else{
+                        validatePassword.value = Constants.REGISTRY.REQUIRED_FIELD
+                    }
+                }else{
+                    this.email.value = Constants.REGISTRY.REQUIRED_FIELD
+                }
+            }else{
+                this.name.value = Constants.REGISTRY.REQUIRED_FIELD
+            }
+
         }else{
-            mutable.value= "Los campos son diferentes"
-            Log.i("RegistryViewModel","entra")
+            this.user.value = Constants.REGISTRY.REQUIRED_FIELD
         }
 
+
+
     }
 
-    override fun validate(msg: String, id: Int) {
-        validate.set(msg)
+    private fun resetFields(){
+        validatePassword.value = null
+        user.value = null
+        name.value = null
+        email.value = null
+
     }
+
 }
