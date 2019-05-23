@@ -41,4 +41,8 @@
         </menu>
     </item>
 
+    <item android:title="@string/close_sesion"
+          android:icon="@drawable/exit"
+          android:id="@+id/close"/>
+
 </menu>

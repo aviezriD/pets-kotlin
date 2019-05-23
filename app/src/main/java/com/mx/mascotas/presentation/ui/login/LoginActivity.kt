@@ -1,7 +1,11 @@
 package com.mx.mascotas.presentation.ui.login
 
 import android.os.Bundle
+import android.util.Log
+import android.view.MenuItem
 import android.view.WindowManager
+import androidx.core.view.GravityCompat
+import com.google.android.material.navigation.NavigationView
 import com.mx.mascotas.BR
 import com.mx.mascotas.MascotasAplication
 import com.mx.mascotas.R
@@ -10,6 +14,7 @@ import com.mx.mascotas.domain.usecase.login.LoginUseCaseImpl
 import com.mx.mascotas.presentation.base.BaseActivity
 import com.mx.mascotas.presentation.ui.login.splash.SplashFragment
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class LoginActivity: BaseActivity<ActivityLoginBinding, LoginViewModel>(), LoginContract.Navigator {
     private val scheduler by lazy { MascotasAplication.scheduler }
@@ -29,7 +34,6 @@ class LoginActivity: BaseActivity<ActivityLoginBinding, LoginViewModel>(), Login
     override fun onCreate(savedInstanceState: Bundle?) {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         super.onCreate(savedInstanceState)
-        goFragment(container.id, SplashFragment())
+        goFragmentNotBack(container.id, SplashFragment())
     }
-
 }

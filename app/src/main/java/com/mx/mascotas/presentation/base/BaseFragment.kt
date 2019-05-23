@@ -70,8 +70,17 @@ abstract class BaseFragment<V : ViewDataBinding, M : BaseViewModel<*,*>> : Fragm
         fragmentTransaction.addToBackStack(null)
         fragmentTransaction.commit()
     }
+    inline fun FragmentManager.inTransactionNotBack(func: FragmentTransaction.() -> Unit) {
+        val fragmentTransaction = beginTransaction()
+        fragmentTransaction.func()
+        fragmentTransaction.disallowAddToBackStack()
+        fragmentTransaction.commit()
+    }
 
     protected fun goFragment(layoutOrign: Int, fragment: Fragment) {
         getActivity()?.supportFragmentManager?.inTransaction { replace(layoutOrign,fragment) }
+    }
+    protected fun goFragmentNotBack(layoutOrign: Int, fragment: Fragment) {
+        getActivity()?.supportFragmentManager?.inTransactionNotBack { replace(layoutOrign,fragment) }
     }
 }

@@ -34,7 +34,7 @@ class SplashFragment: BaseFragment<FragmentSplashBinding,SplashViewModel>(), Spl
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loadAnimation()
-        Handler().postDelayed({ goFragment(R.id.container,SignFragment()) },SPLASH_TIME_OUT)
+        Handler().postDelayed({ goFragmentNotBack(R.id.container,SignFragment()) },SPLASH_TIME_OUT)
     }
 
     private fun loadAnimation(){

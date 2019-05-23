@@ -1,5 +1,6 @@
 package com.mx.mascotas.presentation.ui.main
 
+import android.util.Log
 import androidx.databinding.Observable
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
@@ -14,23 +15,31 @@ class MainViewModel(scheduleProvider: ScheduleProvider,
                     useCase: MainUseCase):
     BaseViewModel<MainContract.Navigator,MainUseCase>(scheduleProvider,navigator,useCase) {
 
+
+    val typeMenu = ObservableBoolean()
+    val user = ObservableField<User>()
+
     init {
+
+//        android.os.Handler().postDelayed(Runnable { Log.i("menu ","change") ;typeMenu.set(true)},8000)
         compositeDisposable.add(
             useCase.getUser()
                 .subscribeOn(scheduleProvider.io())
                 .observeOn(scheduleProvider.ui())
                 .subscribe({
-                    if ( it.idRole == 0)
+                    if ( it.idRole == 0){
                         typeMenu.set(true)
-                    else
-                        typeMenu.set(true)
+                        Log.i("menu ","true")
+                    }
+                    else{
+                        typeMenu.set(false)
+                        Log.i("menu ","false")
+                    }
                     user.set(it)
                 },{
-
+                    it.printStackTrace()
                 })
         )
     }
 
-    val typeMenu = ObservableBoolean()
-    val user = ObservableField<User>()
 }

@@ -38,6 +38,7 @@
     <!--main-->
     <string name="drawer_open">Open Navigation</string>
     <string name="drawer_close">Close Navigation</string>
+    <string name="close_sesion">Cerrar Sessión</string>
 
 
     <!--pet-->
@@ -65,4 +66,25 @@
     <string name="pet_photo">Seleccionar foto</string>
     <string name="pet_registry">Registrar</string>
 
+    <!--date-->
+    <string name="date_welcome">Hola bienvenido,\n¡aún no tienes citas!</string>
+
+    <!--history-->
+    <string name="history_welcome">Hola bienvenido,\n¡aún no tienes citas!</string>
+
+    <!--client-->
+    <string name="client_welcome">Hola bienvenido,\n¡Aún no tienes Clientes!</string>
+
+    <!--profile-->
+    <string name="profile_name">Nombre(s)</string>
+    <string name="profile_last_name">Apellido Paterno</string>
+    <string name="profile_second_name">Apellido Materno</string>
+    <string name="profile_email">Email</string>
+    <string name="profile_pwd"> Constraseña</string>
+    <string name="profile_button">Actualizar</string>
+    <!--<string name="profile_"> </string>-->
+
+    <!--tip-->
+    <string name="tip_welcome">Hola bienvenido,\naun no hay tips</string>
+    <!--<string name="tip_"></string>-->
 </resources>

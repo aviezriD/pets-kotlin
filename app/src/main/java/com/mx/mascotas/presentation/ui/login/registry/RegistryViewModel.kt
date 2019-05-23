@@ -31,13 +31,11 @@ class RegistryViewModel(scheduleProvider: ScheduleProvider,
                         if (pwd.length > 6){
                             if (pwd == pwd2){
                                 val user = User(0,type,user = user ,name = name,email = email,password = pwd)
-                                Log.i("RegistryViewModel",Gson().toJson(user))
                                 compositeDisposable.add(
                                     useCase.register(user)
                                         .subscribeOn(scheduleProvider.io())
                                         .observeOn(scheduleProvider.ui())
                                         .subscribe({
-                                            Log.i("RegistryViewModel","success")
                                             if ( it){
                                                 result.value = Pair(0,Constants.REGISTRY.SUCCESS)
                                             }else
@@ -50,7 +48,7 @@ class RegistryViewModel(scheduleProvider: ScheduleProvider,
                                 )
                             }else{
                                 validatePassword.value = Constants.REGISTRY.DIFERENT_FIELD
-                                Log.i("RegistryViewModel","entra")
+
                             }
                         }else{
                             validatePassword.value = Constants.REGISTRY.INVALIDATE_FIELD
@@ -69,8 +67,6 @@ class RegistryViewModel(scheduleProvider: ScheduleProvider,
         }else{
             this.user.value = Constants.REGISTRY.REQUIRED_FIELD
         }
-
-
 
     }
 

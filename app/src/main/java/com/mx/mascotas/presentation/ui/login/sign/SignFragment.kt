@@ -58,7 +58,7 @@ class SignFragment: BaseFragment<FragmentSignBinding,SignViewModel>(),SignContra
             tupla?.let {
             val (type , msg ) = it
                 when(type){
-                    1 -> startActivity(Intent(context,MainActivity::class.java))
+                    1 -> {startActivity(Intent(context,MainActivity::class.java));activity?.finish()}
                     else -> Toast.makeText(context,msg,Toast.LENGTH_LONG).show()
                 }
             }

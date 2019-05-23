@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable name="tipViewModel" type="com.mx.mascotas.presentation.ui.main.common.tip.TipViewModel"/>
+    </data>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="@string/tip_welcome"
+                android:textColor="@color/colorAccent"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:id="@+id/textView9"/>
+    </FrameLayout>
+</layout>

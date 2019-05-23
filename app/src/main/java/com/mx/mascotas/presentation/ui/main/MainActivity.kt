@@ -1,8 +1,13 @@
 package com.mx.mascotas.presentation.ui.main
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
 import androidx.lifecycle.LifecycleOwner
+import com.google.android.material.navigation.NavigationView
 import com.mx.mascotas.BR
 import com.mx.mascotas.MascotasAplication
 import com.mx.mascotas.R
@@ -10,10 +15,11 @@ import com.mx.mascotas.data.repository.UserDataRepository
 import com.mx.mascotas.databinding.ActivityMainBinding
 import com.mx.mascotas.domain.usecase.main.MainUseCaseImpl
 import com.mx.mascotas.presentation.base.BaseActivity
+import com.mx.mascotas.presentation.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
-class MainActivity : BaseActivity<ActivityMainBinding,MainViewModel>(),MainContract.Navigator {
+class MainActivity : BaseActivity<ActivityMainBinding,MainViewModel>(),MainContract.Navigator, NavigationView.OnNavigationItemSelectedListener {
     private val scheduler by lazy { MascotasAplication.scheduler }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +30,7 @@ class MainActivity : BaseActivity<ActivityMainBinding,MainViewModel>(),MainContr
         )
         drawer_nav.addDrawerListener(toggle)
         toggle.syncState()
+        nav_menu.setNavigationItemSelectedListener(this)
 
     }
 
@@ -37,5 +44,23 @@ class MainActivity : BaseActivity<ActivityMainBinding,MainViewModel>(),MainContr
 
     override fun getViewModel(): MainViewModel {
         return MainViewModel(scheduler,this,MainUseCaseImpl(UserDataRepository(),MascotasAplication.application.appPreferences))
+    }
+
+    override fun onNavigationItemSelected(p0: MenuItem): Boolean {
+        when (p0.itemId) {
+            R.id.close -> {finish(); startActivity(Intent(this,LoginActivity::class.java))}
+            R.id.misMascotas -> Log.i("menu","masco")
+            R.id.proximasCitas -> Log.i("menu","citas")
+            R.id.promo -> Log.i("menu","promo")
+            R.id.tips -> Log.i("menu","tips")
+            R.id.miPerfil -> Log.i("menu","perfil")
+            R.id.vinculacion -> Log.i("menu","vinculacion")
+            R.id.historial -> Log.i("menu","historial")
+            R.id.infoCliente -> Log.i("menu","clientes")
+            else -> Log.i("menu","other")
+        }
+
+        drawer_nav.closeDrawer(GravityCompat.START)
+        return true
     }
 }
