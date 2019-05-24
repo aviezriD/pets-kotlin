@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:id="@+id/linearLayout">
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:id="@+id/scrollView3">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+            <TextView
+                    android:text="@string/pet_estetica"
+                    android:layout_width="135dp"
+                    android:layout_height="35dp" android:id="@+id/textView3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="8dp" android:textSize="24dp"
+            />
+
+
+            <TextView
+                    android:text="Nombre de estética (data)"
+                    android:layout_width="356dp"
+                    android:layout_height="43dp" android:id="@+id/textView4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="156dp" android:textSize="24dp"
+                    android:layout_marginEnd="138dp" android:layout_marginRight="138dp"
+                    app:layout_constraintHorizontal_bias="0.0" android:layout_marginLeft="25dp"
+                    android:layout_marginStart="25dp"/>
+
+            <View
+                    android:id="@+id/view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="5dp"
+                    android:background="@color/colorAccent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="212dp"
+                    android:layout_marginEnd="138dp" android:layout_marginRight="138dp"
+                    app:layout_constraintHorizontal_bias="0.153" android:layout_marginLeft="25dp"
+                    android:layout_marginStart="25dp"/>
+
+            <item android:title="Detalles de estética" android:layout_height="148dp" android:layout_width="280dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+                  android:layout_marginTop="228dp"
+                  android:layout_marginEnd="138dp" android:layout_marginRight="138dp"
+                  app:layout_constraintHorizontal_bias="0.0" android:layout_marginLeft="25dp"
+                  android:layout_marginStart="25dp">
+                <menu>
+
+
+                    <item
+                            android:id="@+id/ubicacion"
+                            android:icon="@drawable/ic_map_black_24dp"
+                            android:title="Ubicación(data)"/>
+                    <item
+                            android:id="@+id/telefono"
+                            android:icon="@drawable/ic_phone_black_24dp"
+                            android:title="Teléfono (data)"/>
+                    <item
+                            android:id="@+id/horario"
+                            android:icon="@drawable/ic_access_time_black_24dp"
+                            android:title="Horario (data)"/>
+
+
+                </menu>
+
+            </item>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</LinearLayout>
