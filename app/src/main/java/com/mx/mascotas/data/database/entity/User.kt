@@ -21,6 +21,7 @@ data class User(var id : Int = 0,
         result["user"] = user
         result["email"] = email
         result["name"] = name
+        result["lastName"] = lastName
         result["phone"] = phone
         result["password"] = password
         result["token"] = token
