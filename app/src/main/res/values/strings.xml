@@ -96,7 +96,36 @@
     <string name="profile_button">Actualizar</string>
     <!--<string name="profile_"> </string>-->
 
+    <!--menu dueño-->
+    <string name="menu_mascotas">Mis mascotas</string>
+
+    <!--búsqueda de servicios-->
+    <string name="pet_services">Servicios</string>
+    <string name="pet_veterinaria">Veterinaria</string>
+    <string name="search">Buscar</string>
+    <string name="location">Ubicación actual</string>
+    <string name="pet_estetica">Estética</string>
+
+
+    <!--Citas -->
+    <string name="pet_ctas_medicas">Citas médicas</string>
+    <string name="pet_ctas_higiene">Higiene</string>
+    <string name="pet_ctas_vacunas">Vacunas</string>
+    <!--Agenda citas-->
+    <string name="pet_agenda_medica">Agendar cita médica</string>
+    <string name="pet_listaVeterinarios">Médicos veterinarios</string>
+
+    <!--Botones-->
+    <string name="nextStep">Siguiente</string>
+
+
+
+
+
+
     <!--tip-->
     <string name="tip_welcome">Hola bienvenido,\naun no hay tips</string>
+    <string name="pet_peso">Peso Kg</string>
+    <string name="servicios">Servicios</string>
     <!--<string name="tip_"></string>-->
 </resources>
