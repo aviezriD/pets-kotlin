@@ -19,11 +19,13 @@
 
     <!-- Registry -->
     <string name="title_registro">Registro de usuarios</string>
-    <string name="nombre">Nombre</string>
+    <string name="name">Nombre(s)</string>
+    <string name="last_name">Apellidos</string>
+    <string name="phone">Telefono</string>
     <string name="app">Apellido Paterno</string>
     <string name="apm">Apellido Materno</string>
     <string name="nickname">Nombre de usuario</string>
-    <string name="overname">Nickname</string>
+    <string name="overname">Usuario</string>
     <string name="emial">Correo</string>
     <string name="passwprd">Contraseña</string>
     <string name="validatepdw">Valida tu contraseña</string>
@@ -68,6 +70,16 @@
 
     <!--date-->
     <string name="date_welcome">Hola bienvenido,\n¡aún no tienes citas!</string>
+    <string name="date_service">Servicio</string>
+    <string name="date_sub_service">Subservicio</string>
+    <string name="date_pet">Mascota</string>
+    <string name="date_type">Tipo</string>
+    <string name="date_observer">Observaciones</string>
+    <string name="date_recomends">Recomendaciones</string>
+    <string name="date_n_vaccine">Número de Serie de la Vacuna</string>
+    <string name="date_next_vaccine">Próxima Vacuna</string>
+    <string name="date_reason_cancel"></string>
+    <string name="date_"></string>
 
     <!--history-->
     <string name="history_welcome">Hola bienvenido,\n¡aún no tienes citas!</string>

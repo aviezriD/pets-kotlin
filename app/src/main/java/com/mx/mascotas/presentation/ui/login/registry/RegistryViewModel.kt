@@ -18,52 +18,60 @@ class RegistryViewModel(scheduleProvider: ScheduleProvider,
     var validatePassword = MutableLiveData<String>()
     var user = MutableLiveData<String>()
     var name = MutableLiveData<String>()
+    var lastName = MutableLiveData<String>()
+    var phone = MutableLiveData<String>()
     var email = MutableLiveData<String>()
     var result = MutableLiveData<Pair<Int,String>>()
 
-    override fun register(user: String,email: String, pwd: String, pwd2: String, name: String,type : Int) {
+    override fun register(user: String,email: String, pwd: String, pwd2: String, name: String,lastName: String,phone : String,type : Int) {
         resetFields()
 
         if (user.isNotEmpty()){
-            if (name.isNotEmpty()){
-                if (email.isNotEmpty()){
-                    if(pwd.isNotEmpty() && pwd2.isNotEmpty()){
-                        if (pwd.length > 6){
-                            if (pwd == pwd2){
-                                val user = User(0,type,user = user ,name = name,email = email,password = pwd)
-                                compositeDisposable.add(
-                                    useCase.register(user)
-                                        .subscribeOn(scheduleProvider.io())
-                                        .observeOn(scheduleProvider.ui())
-                                        .subscribe({
-                                            if ( it){
-                                                result.value = Pair(0,Constants.REGISTRY.SUCCESS)
-                                            }else
-                                                result.value = Pair(0,Constants.REGISTRY.EXIST_USER)
+            if(pwd.isNotEmpty() && pwd2.isNotEmpty()){
+                if (pwd.length > 6){
+                    if (pwd == pwd2){
+                        if (name.isNotEmpty()){
+                            if (lastName.isNotEmpty()){
+                                if (phone.isNotEmpty()){
+                                    if (email.isNotEmpty()){
+                                        val user = User(0,type,user = user ,name = name,lastName = lastName,phone = phone,email = email,password = pwd)
+                                        compositeDisposable.add(
+                                            useCase.register(user)
+                                                .subscribeOn(scheduleProvider.io())
+                                                .observeOn(scheduleProvider.ui())
+                                                .subscribe({
+                                                    if ( it){
+                                                        result.value = Pair(0,Constants.REGISTRY.SUCCESS)
+                                                    }else
+                                                        result.value = Pair(0,Constants.REGISTRY.EXIST_USER)
 
-                                        },{it.printStackTrace()
-                                            result.value = Pair(-1,"")
-                                            Log.e("RegistryViewModel","fail")
-                                        })
-                                )
-                            }else{
-                                validatePassword.value = Constants.REGISTRY.DIFERENT_FIELD
+                                                },{it.printStackTrace()
+                                                    result.value = Pair(-1,"")
+                                                    Log.e("RegistryViewModel","fail")
+                                                }) )
 
-                            }
+                                    }else{
+                                        this.email.value = Constants.REGISTRY.REQUIRED_FIELD
+                                    }
+                                }else
+                                    this.phone.value = Constants.REGISTRY.REQUIRED_FIELD
+                            }else
+                                this.lastName.value = Constants.REGISTRY.REQUIRED_FIELD
                         }else{
-                            validatePassword.value = Constants.REGISTRY.INVALIDATE_FIELD
+                            this.name.value = Constants.REGISTRY.REQUIRED_FIELD
                         }
 
                     }else{
-                        validatePassword.value = Constants.REGISTRY.REQUIRED_FIELD
+                        validatePassword.value = Constants.REGISTRY.DIFERENT_FIELD
+
                     }
                 }else{
-                    this.email.value = Constants.REGISTRY.REQUIRED_FIELD
+                    validatePassword.value = Constants.REGISTRY.INVALIDATE_FIELD
                 }
-            }else{
-                this.name.value = Constants.REGISTRY.REQUIRED_FIELD
-            }
 
+            }else{
+                validatePassword.value = Constants.REGISTRY.REQUIRED_FIELD
+            }
         }else{
             this.user.value = Constants.REGISTRY.REQUIRED_FIELD
         }

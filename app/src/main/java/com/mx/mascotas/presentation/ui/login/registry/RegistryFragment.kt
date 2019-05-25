@@ -47,6 +47,8 @@ class RegistryFragment : BaseFragment<FragmentRegistryBinding,RegistryViewModel>
                 pwd_register.text.toString().trim(),
                 pwd_register2.text.toString().trim(),
                 name.text.toString().trim(),
+                last_name.text.toString().trim(),
+                phone.text.toString().trim(),
                 type
             )
         }
@@ -71,6 +73,12 @@ class RegistryFragment : BaseFragment<FragmentRegistryBinding,RegistryViewModel>
         viewModelI.user.observe(this, Observer {
             textInputLayout3?.error = it
         })
+        viewModelI.lastName.observe(this, Observer {
+            textInputLayout27?.error = it
+        })
+        viewModelI.phone.observe(this, Observer {
+                    textInputLayout28?.error = it
+                })
 
         viewModelI.result.observe(this, Observer {
             it.let {
