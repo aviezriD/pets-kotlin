@@ -80,7 +80,14 @@
                 <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/pet_color"/>
+                        android:hint="@string/pet_peso"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sexo de la mascota:"
+                        android:textAlignment="center"
+                        android:textColor="#757575"
+                        android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
             <RadioGroup android:id="@+id/checks" android:layout_height="wrap_content" android:layout_width="0dp"
                         app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
@@ -142,10 +149,7 @@
                     app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
                     android:layout_marginStart="8dp" android:id="@+id/textInputLayout13">
 
-                <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/pet_number"/>
+
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="395dp"
@@ -156,10 +160,7 @@
                     app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
                     android:layout_marginStart="8dp" android:id="@+id/textInputLayout14">
 
-                <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/pet_chip"/>
+
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="395dp"
@@ -184,10 +185,7 @@
                     app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
                     android:layout_marginStart="8dp" android:id="@+id/textInputLayout16">
 
-                <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/pet_father"/>
+
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="395dp"
@@ -197,10 +195,7 @@
                     app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginLeft="8dp" android:layout_marginStart="8dp">
 
-                <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/pet_mother"/>
+
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="395dp"
@@ -223,13 +218,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout18"
                     app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
                     android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:id="@+id/textInputLayout19">
-
-                <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/pet_conditions"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:id="@+id/textInputLayout19"/>
             <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="395dp"
                     android:layout_height="wrap_content"
@@ -237,13 +226,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout19" android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp" app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-                    android:layout_marginStart="8dp" android:id="@+id/textInputLayout20">
-
-                <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/pet_weight"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_marginStart="8dp" android:id="@+id/textInputLayout20"/>
             <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="395dp"
                     android:layout_height="wrap_content"
