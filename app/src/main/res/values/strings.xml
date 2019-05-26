@@ -138,6 +138,17 @@
     <!--Veterinarios-->
     <string name="vet_title">Veterinarios</string>
     <string name="pet_sub_vet">Seleccione el veterinario con el que desea agendar cita</string>
+    <string name="vet_mi_agenda">Mi agenda</string>
+
+
+
+    <!--Datepicker-->
+
+    <string name="titlulo_pickers">Obtener fecha y hora</string>
+
+    <string name="formato_fecha">dd/mm/yyyy</string>
+    <string name="formato_hora">hh:mm</string>
+
 
 
 
