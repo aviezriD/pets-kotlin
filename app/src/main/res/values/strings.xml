@@ -122,6 +122,34 @@
 
 
 
+<!--Citas-->
+    <string name="cita_title">Registro de cita</string>
+    <string name="pet_sub_cita">Ingresa los datos de la cita que desear agendar</string>
+    <string name="pet_mascota">Mascota</string>
+    <string name="pet_servicios">Servicio</string>
+    <string name="service1">Baño</string>
+    <string name="service2">Corte de pelo</string>
+    <string name="service3">Limpieza de oídos</string>
+    <string name="pet_veterinario">Veterinario</string>
+    <string name="servicio_fecha">Fecha</string>
+    <string name="servicio_horario">Hora</string>
+    <string name="pet_observaciones">Observaciones</string>
+
+    <!--Veterinarios-->
+    <string name="vet_title">Veterinarios</string>
+    <string name="pet_sub_vet">Seleccione el veterinario con el que desea agendar cita</string>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

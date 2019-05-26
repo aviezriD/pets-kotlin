@@ -58,7 +58,7 @@ class MainActivity : BaseActivity<ActivityMainBinding,MainViewModel>(),MainContr
             R.id.close -> {finish(); startActivity(Intent(this,LoginActivity::class.java))}
             R.id.misMascotas -> Log.i("menu","masco")
             R.id.proximasCitas -> Log.i("menu","citas")
-            R.id.promo -> Log.i("menu","promo")
+            R.id.promociones -> Log.i("menu","promo")
             R.id.tips -> Log.i("menu","tips")
             R.id.miPerfil -> Log.i("menu","perfil")
             R.id.vinculacion -> Log.i("menu","vinculacion")
