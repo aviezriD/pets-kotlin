@@ -1,14 +1,17 @@
 package com.mx.mascotas.data.repository
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.Transformations
 import com.mx.mascotas.data.database.entity.CatPet
 import com.mx.mascotas.data.database.entity.CatPetSize
 import com.mx.mascotas.data.database.entity.Pet
 import com.mx.mascotas.data.repository.datasource.catpet.CatPetDataFactory
 import com.mx.mascotas.data.repository.datasource.catpetsize.CatPetSizeDataFactory
 import com.mx.mascotas.data.repository.datasource.pet.PetDataFactory
+import com.mx.mascotas.domain.entity.ItemPet
 import com.mx.mascotas.domain.repository.PetRepository
 import io.reactivex.Observable
+import java.util.ArrayList
 
 class PetDataRepository: PetRepository {
     private val petDataFactory by lazy { PetDataFactory() }
@@ -40,5 +43,20 @@ class PetDataRepository: PetRepository {
 
     override fun getListCatPetSize(): LiveData<List<CatPetSize>> {
         return catSizePetDb.getListCatPetSize()
+    }
+    private fun getNameByType(type : Int): String{
+        return when(type){
+            0 ->"Perro"
+            1 ->"Gato"
+            else -> "Otro"
+        }
+    }
+    override fun getListPetByNameMinimal(user: String): LiveData<List<ItemPet>> {
+        return Transformations.map(petDb.getListPetByName(user)) { l ->
+            val result = ArrayList<ItemPet>()
+            for ( i in l)
+                result.add(ItemPet(i.name,i.photo,getNameByType(i.type),i.race))
+            result
+        }
     }
 }

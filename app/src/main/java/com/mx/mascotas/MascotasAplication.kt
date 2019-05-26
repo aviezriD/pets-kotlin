@@ -7,9 +7,7 @@ import com.facebook.stetho.Stetho
 import com.google.firebase.FirebaseApp
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.mx.mascotas.data.database.AppDataBase
-import com.mx.mascotas.data.database.entity.CatPet
-import com.mx.mascotas.data.database.entity.CatPetSize
-import com.mx.mascotas.data.database.entity.Role
+import com.mx.mascotas.data.database.entity.*
 import com.mx.mascotas.data.executor.AppScheduleProvider
 import com.mx.mascotas.data.network.service.ApiService
 import com.mx.mascotas.data.repository.AppPreferenceRepository
@@ -43,6 +41,7 @@ class MascotasAplication: Application() {
     val database by lazy {
         Room.databaseBuilder(this, AppDataBase::class.java, Constants.Database.DB_NAME)
             .build()
+
     }
 
     val appPreferences by lazy { AppPreferenceRepository(applicationContext.getSharedPreferences("mascotas" ,Context.MODE_PRIVATE)) }
@@ -75,6 +74,15 @@ class MascotasAplication: Application() {
                 database.catPetSizeDao().insert(CatPetSize(2,"Mediano"))
                 database.catPetSizeDao().insert(CatPetSize(3,"Grande"))
                 database.catPetSizeDao().insert(CatPetSize(4,"Gigante"))
+
+                database.catDateStatusDao().insert(CatDateStatus (0, "Pendiente"))
+                database.catDateStatusDao().insert(CatDateStatus (1, "Cancelada"))
+                database.catDateStatusDao().insert(CatDateStatus (2, "Finalizada"))
+
+
+                database.catServicesDao().insert(CatService(0, "Veterinario"))
+                database.catServicesDao().insert(CatService(1, "Higiene"))
+                database.catServicesDao().insert(CatService(2, "Vacuna"))
 
                 appPreferences.setPreLoad(true)
             }

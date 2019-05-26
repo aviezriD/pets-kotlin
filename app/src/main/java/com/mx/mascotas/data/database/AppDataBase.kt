@@ -4,13 +4,22 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.mx.mascotas.data.database.dao.*
 import com.mx.mascotas.data.database.entity.*
+import com.mx.mascotas.data.database.dao.DateDao
+import com.mx.mascotas.data.database.dao.RoleDao
+import com.mx.mascotas.data.database.dao.UserDao
+import com.mx.mascotas.data.database.entity.Date
+import com.mx.mascotas.data.database.entity.Role
+import com.mx.mascotas.data.database.entity.User
 
 @Database(
     entities = [
+        Date::class,
         User::class,
         Role::class,
         CatPet::class,
         CatPetSize::class,
+        CatDateStatus::class,
+        CatService::class,
         Pet::class,
         Veterinary::class],
     version = 1,
@@ -21,5 +30,10 @@ abstract class AppDataBase: RoomDatabase() {
     abstract fun petDao() : PetDao
     abstract fun catPetDao() : CatPetDao
     abstract fun catPetSizeDao() : CatPetSizeDao
+    abstract fun dateDao() : DateDao
+    abstract fun catDateStatusDao() : CatDateStatusDao
+    abstract  fun catServicesDao() : CatServicesDao
     abstract fun veterinaryDao() :VeterinaryDao
+
+
 }
