@@ -18,6 +18,8 @@ import com.mx.mascotas.data.database.entity.User
         Role::class,
         CatPet::class,
         CatPetSize::class,
+        CatDateStatus::class,
+        CatService::class,
         Pet::class],
     version = 1,
     exportSchema = false)
