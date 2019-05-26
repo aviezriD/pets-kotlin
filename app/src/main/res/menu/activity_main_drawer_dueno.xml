@@ -11,19 +11,17 @@
                 android:icon="@drawable/ic_pets_black_24px"
                 android:title="Mis Mascotas" />
             <item
-                android:id="@+id/proximasCitas"
+                    android:id="@+id/search_service"
+                    android:icon="@drawable/ic_map_black_24dp"
+                    android:title="Buscar servicios" />
+            <item
+                android:id="@+id/agendarCitas"
                 android:icon="@drawable/ic_event_black_24px"
-                android:title="Próximas Citas" />
+                android:title="Agendar citas" />
             <item
-                android:id="@+id/tips"
-                android:icon="@drawable/ic_lightbulb_outline_black_24px"
-                android:title="Tips" />
-            <item
-                android:id="@+id/promo"
-                android:icon="@drawable/ic_new_releases_white_24px"
-                android:title="Promociones" />
-
-
+                android:id="@+id/misCitas"
+                android:icon="@drawable/ic_icon_doctor"
+                android:title="Mis citas" />
         </menu>
 
     </item>
@@ -35,11 +33,6 @@
                 android:id="@+id/miPerfil"
                 android:icon="@drawable/ic_account_box_black_24px"
                 android:title="Mi Perfil" />
-
-            <item
-                android:id="@+id/vinculacion"
-                android:icon="@drawable/ic_leak_add_black_24px"
-                android:title="Vinculación" />
 
         </menu>
     </item>

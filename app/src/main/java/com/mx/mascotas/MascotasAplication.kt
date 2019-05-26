@@ -41,6 +41,7 @@ class MascotasAplication: Application() {
     val database by lazy {
         Room.databaseBuilder(this, AppDataBase::class.java, Constants.Database.DB_NAME)
             .build()
+
     }
 
     val appPreferences by lazy { AppPreferenceRepository(applicationContext.getSharedPreferences("mascotas" ,Context.MODE_PRIVATE)) }
