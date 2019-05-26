@@ -35,6 +35,7 @@ class MainActivity : BaseActivity<ActivityMainBinding,MainViewModel>(),MainContr
         nav_menu.setNavigationItemSelectedListener(this)
         goFragment(R.id.container_main, OwnerFragment())
 
+
     }
 
     override fun getBindingVariable(): Int {
@@ -48,6 +49,7 @@ class MainActivity : BaseActivity<ActivityMainBinding,MainViewModel>(),MainContr
     override fun getViewModel(): MainViewModel {
         return MainViewModel(scheduler,this,MainUseCaseImpl(UserDataRepository(),MascotasAplication.application.appPreferences))
     }
+
 
 
 

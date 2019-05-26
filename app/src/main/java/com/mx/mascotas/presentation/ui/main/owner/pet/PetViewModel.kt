@@ -1,6 +1,8 @@
 package com.mx.mascotas.presentation.ui.main.owner.pet
 
 import androidx.databinding.ObservableArrayList
+import androidx.databinding.ObservableBoolean
+import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.mx.mascotas.data.database.entity.CatPet
@@ -10,10 +12,12 @@ import com.mx.mascotas.data.repository.ScheduleProvider
 import com.mx.mascotas.domain.usecase.pet.PetUseCase
 import com.mx.mascotas.presentation.base.BaseViewModel
 import com.mx.mascotas.presentation.ui.utils.Constants
+import com.mx.mascotas.presentation.ui.utils.Utils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import java.util.*
 
 class PetViewModel(scheduleProvider: ScheduleProvider,navigator: PetContract.Navigator,usercase: PetUseCase):
 BaseViewModel<PetContract.Navigator,PetUseCase>(scheduleProvider,navigator,usercase),PetContract.ViewModel{
@@ -21,9 +25,12 @@ BaseViewModel<PetContract.Navigator,PetUseCase>(scheduleProvider,navigator,userc
     private val scope = CoroutineScope(Dispatchers.IO + viewModelJob)
 
     val catPet = ObservableArrayList<CatPet>()
-    val catPetSize = ObservableArrayList<CatPet>()
+
+
+    val catPetSize = ObservableArrayList<CatPetSize>()
 
     var listCatPat : LiveData<List<CatPet>> = MutableLiveData()
+
     var listCatPatSize : LiveData<List<CatPetSize>> = MutableLiveData()
 
     val userLiveData = MutableLiveData<String>()
@@ -64,10 +71,14 @@ BaseViewModel<PetContract.Navigator,PetUseCase>(scheduleProvider,navigator,userc
         catPet.addAll(list)
     }
 
+    override fun addCatTypeSize(list: List<CatPetSize>) {
+        catPetSize.clear()
+        catPetSize.addAll(list)
+    }
+
     override fun register(
         name: String,
         race: String,
-        color: String,
         weight: String,
         sizeType: Int,
         type: Int,
@@ -98,9 +109,12 @@ BaseViewModel<PetContract.Navigator,PetUseCase>(scheduleProvider,navigator,userc
             weightLiveData.value = Constants.PET_REGISTRY.REQUIRED_FIELD
             return
         }
+        var date : Date?
         if ( dateBorn.isEmpty()){
             dateBornLiveData.value = Constants.PET_REGISTRY.REQUIRED_FIELD
             return
+        }else{
+            date = Utils.stringToDate(dateBorn)
         }
 
         if ( signs.isEmpty()){
@@ -114,9 +128,10 @@ BaseViewModel<PetContract.Navigator,PetUseCase>(scheduleProvider,navigator,userc
 
 
         scope.launch {
-            val pet = Pet("",name,race,color,weight.toFloat(),type,sex,sizeType,allergy,dateBorn.toLong(),signs,photo,"")
+            val pet = Pet("",name,race,weight.toFloat(),type,sex,sizeType,allergy,date?.time ?: 0,signs,photo,"")
             useCase.register(pet)
         }
+        navigator.success()
 
 
 
