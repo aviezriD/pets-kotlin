@@ -22,6 +22,8 @@ object Constants {
         const val PATH_VET_DATE = "mascota/veterinario/agendar_cita/"
 
 
+        const val PATH_VET_VET = "mascota/veterinario/veterinary/"
+
 
     }
 }

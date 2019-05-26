@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <TextView
+            android:text="Servicios de tu Veterinaria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView42" android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="50dp"
+            app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+            android:text="Por favor selecciona los servicios que se brindan en tu Veterinaria o ingresa otros."
+            android:layout_width="349dp"
+            android:layout_height="42dp"
+            android:id="@+id/textView43" android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView42" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"/>
+    <CheckBox
+            android:text="Consulta Médica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox8" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView43" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"/>
+    <CheckBox
+            android:text="@string/pet_ctas_vacunas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox9" android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox8" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"/>
+    <CheckBox
+            android:text="Desparasitaciones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox10" android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox9" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"/>
+    <CheckBox
+            android:text="@string/pet_ctas_higiene"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox11" android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox10" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"/>
+
+
+    <CheckBox android:id="@+id/checkbox_baño"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:text="@string/service1"
+              android:onClick="onCheckboxClicked"
+              app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="32dp"
+              android:layout_marginStart="32dp" tools:layout_editor_absoluteY="925dp"/>
+    <CheckBox android:id="@+id/checkbox_corte"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:text="@string/service2"
+              android:onClick="onCheckboxClicked"
+              android:layout_marginTop="8dp"
+              app:layout_constraintTop_toBottomOf="@+id/checkbox_baño"
+              app:layout_constraintStart_toStartOf="parent"
+              android:layout_marginLeft="24dp" android:layout_marginStart="24dp"/>
+    <CheckBox android:id="@+id/checkbox_oidos"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:text="@string/service3"
+              android:onClick="onCheckboxClicked"
+              android:layout_marginTop="8dp"
+              app:layout_constraintTop_toBottomOf="@+id/checkbox_corte"
+              app:layout_constraintStart_toStartOf="parent"
+              android:layout_marginLeft="24dp" android:layout_marginStart="24dp"/>
+    <CheckBox
+            android:text="Baño"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox12" android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView44" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="50dp" android:layout_marginStart="50dp"/>
+    <CheckBox
+            android:text="Corte de Cabello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox13" android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox12" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="50dp" android:layout_marginStart="50dp"/>
+    <CheckBox
+            android:text="Limpieza de Oídos"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:id="@+id/checkBox14" android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox13" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="50dp" android:layout_marginStart="50dp"/>
+    <TextView
+            android:text="Subservicios de Higiene"
+            android:layout_width="155dp"
+            android:layout_height="21dp"
+            android:id="@+id/textView44" android:textStyle="bold"
+            android:layout_marginTop="24dp" app:layout_constraintTop_toBottomOf="@+id/checkBox11"
+            android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp"/>
+    <Button
+            android:text="Aceptar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="619dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/button10" android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

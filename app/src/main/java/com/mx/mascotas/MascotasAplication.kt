@@ -84,6 +84,10 @@ class MascotasAplication: Application() {
                 database.catServicesDao().insert(CatService(1, "Higiene"))
                 database.catServicesDao().insert(CatService(2, "Vacuna"))
 
+               // database.catEstatusVacunaDao().insert(CatEstatusVacuna(0, "Corrupta"))
+                //database.catEstatusVacunaDao().insert(CatEstatusVacuna(1, "Segura"))
+
+
                 appPreferences.setPreLoad(true)
             }
         }

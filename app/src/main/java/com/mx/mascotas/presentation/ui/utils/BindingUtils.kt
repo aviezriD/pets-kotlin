@@ -1,16 +1,26 @@
 package com.mx.mascotas.presentation.ui.utils
 
 
+import android.net.Uri
 import android.util.Log
 import android.widget.ArrayAdapter
+import android.widget.ImageView
 import android.widget.Spinner
+import androidx.annotation.MenuRes
 import androidx.appcompat.widget.AppCompatSpinner
+import androidx.appcompat.widget.Toolbar
+import androidx.core.content.FileProvider
 import com.google.android.material.textfield.TextInputLayout
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.navigation.NavigationView
+import com.mx.mascotas.BuildConfig
 import com.mx.mascotas.R
 import com.mx.mascotas.data.database.entity.CatPet
 import com.mx.mascotas.data.database.entity.CatPetSize
+import com.mx.mascotas.domain.entity.ItemPet
+import com.mx.mascotas.presentation.ui.main.owner.pet.adapter.PetAdapter
+import java.lang.Exception
 
 
 @BindingAdapter("errorValidation")
@@ -52,6 +62,16 @@ import com.mx.mascotas.data.database.entity.CatPetSize
 
     }
 
+    @BindingAdapter("setMenuTool")
+    fun setMenuToolbar(toolbar: Toolbar, @MenuRes idResMenu: Int?){
+        toolbar?.let {
+            idResMenu?.let { id ->
+                it.inflateMenu(id)
+
+            }
+        }
+    }
+
     @BindingAdapter("app:adapter")
     fun setListCatPet(spinner: Spinner?, list: List<CatPet>){
     spinner?.adapter = ArrayAdapter<CatPet>(spinner?.context,R.layout.support_simple_spinner_dropdown_item,list)
@@ -59,4 +79,27 @@ import com.mx.mascotas.data.database.entity.CatPetSize
     @BindingAdapter("app:adapter")
     fun setListCatPetSize(spinner: Spinner?, list: List<CatPetSize>){
     spinner?.adapter = ArrayAdapter<CatPetSize>(spinner?.context,R.layout.support_simple_spinner_dropdown_item,list)
+
+    }
+
+    @BindingAdapter("adapter")
+    fun setDataKpi(recyclerView: RecyclerView?, list: List<ItemPet>?){
+        val adapter : PetAdapter? = try { recyclerView?.adapter as PetAdapter } catch (e : Exception){null}
+        adapter?.let {
+            list?.let {
+                adapter.list = it
+            }
+            it.notifyDataSetChanged()
+        }
+    }
+    @BindingAdapter("android:src")
+    fun setImageUri(view: ImageView?, path: String?) {
+        path?.let {
+            if (it.isNotEmpty()){
+                view?.let {v ->
+                    v.setImageURI(Uri.parse(path))
+                }
+            }
+        }
+
     }
