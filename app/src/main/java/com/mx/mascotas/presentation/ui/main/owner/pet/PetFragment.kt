@@ -40,7 +40,7 @@ import java.io.IOException
 class PetFragment: BaseFragment<FragmentPetBinding,PetViewModel>(),PetContract.Navigator,
     AdapterView.OnItemSelectedListener {
     private val scheduler by lazy { MascotasAplication.scheduler }
-    private val viewModelI by lazy { PetViewModel(scheduler,this,PetUseCaseImpl(PetDataRepository())) }
+    private val viewModelI by lazy { PetViewModel(scheduler,this,PetUseCaseImpl(PetDataRepository(),MascotasAplication.application.appPreferences)) }
     private var photo = ""
     private val REQUEST_CODE_TAKE_PHOTO = 100
     private var photoFile : File? = null
@@ -72,7 +72,7 @@ class PetFragment: BaseFragment<FragmentPetBinding,PetViewModel>(),PetContract.N
 
         date.setOnTouchListener { v, event ->
             if (v.id == date.id && event.action == 0 )
-                generaDatePickerDialog(date,false,view.context)
+                generaDatePickerDialog(date,true,view.context)
 
             true
         }
@@ -188,7 +188,7 @@ class PetFragment: BaseFragment<FragmentPetBinding,PetViewModel>(),PetContract.N
 
             context?.let {
                 try {
-                    var urid: Uri? = null
+                    /*var urid: Uri? = null
                     if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
                         urid = FileProvider.getUriForFile(it, BuildConfig.APPLICATION_ID, photoFile!!)
                     } else {
@@ -197,10 +197,11 @@ class PetFragment: BaseFragment<FragmentPetBinding,PetViewModel>(),PetContract.N
                     bitmap = BitmapFactory.decodeStream(it.contentResolver.openInputStream(urid))
 
                     val byteArrayOutputStream = ByteArrayOutputStream()
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream)
-                    val byteArray = byteArrayOutputStream.toByteArray()
+                    bitmap.compress(Bitmap.CompressFormat.PNG, 20, byteArrayOutputStream)
+                    val byteArray = byteArrayOutputStream.toByteArray()*/
 
-                    photo = Base64.encodeToString(byteArray, Base64.DEFAULT)
+//                    photo = photoFile?.absolutePath ?: ""
+                    photo = photoFile?.toURI().toString()
                 } catch (e: Exception) {
                     e.printStackTrace()
                     Toast.makeText(context,"Ha ocurrido un error ",Toast.LENGTH_SHORT).show()

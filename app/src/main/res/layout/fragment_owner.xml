@@ -23,6 +23,8 @@
                 app:layout_constraintBottom_toBottomOf="parent" android:layout_gravity="bottom|right"/>
         <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:id="@+id/owner_pet"
+                app:adapter="@{ownerViewModel.pets}"/>
     </com.google.android.material.circularreveal.CircularRevealFrameLayout>
 </layout>
