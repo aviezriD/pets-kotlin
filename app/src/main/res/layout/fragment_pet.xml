@@ -37,6 +37,7 @@
             <Spinner
                     android:layout_width="395dp"
                     android:layout_height="wrap_content"
+                    app:adapter="@{petViewModel.catPet}"
                     android:id="@+id/spinner" android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
                     app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
@@ -101,7 +102,7 @@
                         android:layout_marginRight="24dp" android:layout_marginLeft="24dp"
                         android:orientation="horizontal"
                         android:gravity="center"
-                        android:layout_marginStart="24dp" android:layout_marginTop="24dp"
+                        android:layout_marginStart="24dp" android:layout_marginTop="8dp"
                         app:layout_constraintHorizontal_bias="0.0">
                 <RadioButton
                         android:id="@+id/m"
@@ -140,9 +141,10 @@
                     android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout12"/>
             <Spinner
-                    android:layout_width="395dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/spinner2"
+                    app:adapter="@{petViewModel.catPetSize}"
                     app:layout_constraintTop_toBottomOf="@+id/textView11" android:layout_marginTop="8dp"
                     app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
                     android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
@@ -181,30 +183,16 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="395dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout18" android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp" app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-                    android:layout_marginStart="8dp" android:id="@+id/textInputLayout21">
-
-                <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/pet_description"/>
-            </com.google.android.material.textfield.TextInputLayout>
             <Button
                     android:text="@string/pet_photo"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/button4" android:layout_marginTop="8dp"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout21"
+                    android:id="@+id/button4"
                     app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp" app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
-                    app:backgroundTint="@color/common_google_signin_btn_text_dark_focused"/>
+                    app:backgroundTint="@color/common_google_signin_btn_text_dark_focused"
+                    android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textInputLayout18"/>
             <Button
                     android:text="@string/pet_registry"
                     android:layout_width="0dp"

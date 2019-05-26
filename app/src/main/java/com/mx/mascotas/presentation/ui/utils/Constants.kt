@@ -15,4 +15,11 @@ object Constants {
         const val INCORRECT_PASSWORD = "Contraseña incorrecta"
         const val ERROR = "Ha ocurrido un error, intente mas tarde"
     }
+
+    object PET_REGISTRY{
+        const val REQUIRED_FIELD = "Campo requerido"
+        const val INVALIDATE_FIELD = "Campo Invalido"
+        const val ERROR = "Ha ocurrido un error, intente mas tarde"
+        const val REQUIRED_SELECT = "Seleccione un tipo de mascota"
+    }
 }

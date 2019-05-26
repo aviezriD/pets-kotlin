@@ -16,6 +16,8 @@ import com.mx.mascotas.databinding.ActivityMainBinding
 import com.mx.mascotas.domain.usecase.main.MainUseCaseImpl
 import com.mx.mascotas.presentation.base.BaseActivity
 import com.mx.mascotas.presentation.ui.login.LoginActivity
+import com.mx.mascotas.presentation.ui.main.owner.OwnerFragment
+import com.mx.mascotas.presentation.ui.main.owner.pet.PetFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
@@ -31,6 +33,7 @@ class MainActivity : BaseActivity<ActivityMainBinding,MainViewModel>(),MainContr
         drawer_nav.addDrawerListener(toggle)
         toggle.syncState()
         nav_menu.setNavigationItemSelectedListener(this)
+        goFragment(R.id.container_main, OwnerFragment())
 
     }
 
@@ -45,6 +48,8 @@ class MainActivity : BaseActivity<ActivityMainBinding,MainViewModel>(),MainContr
     override fun getViewModel(): MainViewModel {
         return MainViewModel(scheduler,this,MainUseCaseImpl(UserDataRepository(),MascotasAplication.application.appPreferences))
     }
+
+
 
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
         when (p0.itemId) {

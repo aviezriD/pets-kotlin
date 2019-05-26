@@ -52,6 +52,7 @@ rootProject.ext {
     jackson = "2.9.8"
     //DeviceNames
     DeviceNames = "1.1.8"
+    coroutines = "1.2.1"
 
     presentation = [
             daggerCompiler     : "com.google.dagger:dagger-compiler:${daggerVersion}",
@@ -121,6 +122,8 @@ rootProject.ext {
             jacksondatabind : "com.fasterxml.jackson.core:jackson-databind:${jackson}",
             jacksoncore : "com.fasterxml.jackson.core:jackson-core:${jackson}",
             DeviceNames : "com.jaredrummler:android-device-names:${DeviceNames}",
+            coroutinesCore : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutines}",
+            coroutinesKotlin : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutines}"
 
 
     ]

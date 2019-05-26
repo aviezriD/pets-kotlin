@@ -8,7 +8,6 @@ class DateDataFactory  {
         val databaseDate = DateDataDb (MascotasAplication.application.database.dateDao())
         val databaseFirebase = DateDataFirebase (FirebaseDatabase.getInstance())
     }
-
     fun datebaseReturn () = Resource.databaseDate
     fun databaseReturnFirebase () = Resource.databaseFirebase
 

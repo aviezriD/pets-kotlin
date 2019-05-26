@@ -7,7 +7,7 @@ import com.facebook.stetho.Stetho
 import com.google.firebase.FirebaseApp
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.mx.mascotas.data.database.AppDataBase
-import com.mx.mascotas.data.database.entity.Role
+import com.mx.mascotas.data.database.entity.*
 import com.mx.mascotas.data.executor.AppScheduleProvider
 import com.mx.mascotas.data.network.service.ApiService
 import com.mx.mascotas.data.repository.AppPreferenceRepository
@@ -64,6 +64,26 @@ class MascotasAplication: Application() {
             executor.execute {
                 database.roleDao().insert(Role(name = "Dueño"))
                 database.roleDao().insert(Role(1,"Veterinario"))
+
+                database.catPetDao().insert(CatPet(0,"Perro"))
+                database.catPetDao().insert(CatPet(1,"Gato"))
+                database.catPetDao().insert(CatPet(2,"Otro"))
+
+                database.catPetSizeDao().insert(CatPetSize(0,"Miniatura"))
+                database.catPetSizeDao().insert(CatPetSize(1,"Pequeño"))
+                database.catPetSizeDao().insert(CatPetSize(2,"Mediano"))
+                database.catPetSizeDao().insert(CatPetSize(3,"Grande"))
+                database.catPetSizeDao().insert(CatPetSize(4,"Gigante"))
+
+                database.catDateStatusDao().insert(CatDateStatus (0, "Pendiente"))
+                database.catDateStatusDao().insert(CatDateStatus (1, "Cancelada"))
+                database.catDateStatusDao().insert(CatDateStatus (2, "Finalizada"))
+
+
+                database.catServicesDao().insert(CatService(0, "Veterinario"))
+                database.catServicesDao().insert(CatService(1, "Higiene"))
+                database.catServicesDao().insert(CatService(2, "Vacuna"))
+
                 appPreferences.setPreLoad(true)
             }
         }
