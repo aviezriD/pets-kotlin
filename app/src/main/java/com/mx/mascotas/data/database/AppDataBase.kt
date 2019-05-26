@@ -11,7 +11,8 @@ import com.mx.mascotas.data.database.entity.*
         Role::class,
         CatPet::class,
         CatPetSize::class,
-        Pet::class],
+        Pet::class,
+        Veterinary::class],
     version = 1,
     exportSchema = false)
 abstract class AppDataBase: RoomDatabase() {
@@ -20,4 +21,5 @@ abstract class AppDataBase: RoomDatabase() {
     abstract fun petDao() : PetDao
     abstract fun catPetDao() : CatPetDao
     abstract fun catPetSizeDao() : CatPetSizeDao
+    abstract fun veterinaryDao() :VeterinaryDao
 }

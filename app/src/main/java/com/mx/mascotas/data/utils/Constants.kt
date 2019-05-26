@@ -18,6 +18,8 @@ object Constants {
         const val PATH_VET_DATA = "mascota/veterinario/data/"
         const val PATH_VET_PWD = "mascota/veterinario/security/"
 
+        const val PATH_VET_VET = "mascota/veterinario/veterinary/"
+
 
     }
 }
