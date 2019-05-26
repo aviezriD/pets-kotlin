@@ -7,7 +7,6 @@ import androidx.room.PrimaryKey
 data class Pet(@PrimaryKey var id : String = "",
                var name :String = "",
                var race: String = "",
-               var color: String = "",
                var weight: Float = 0f,
 //               var size : Int = 0,
                var type : Int = 0,
@@ -24,7 +23,7 @@ data class Pet(@PrimaryKey var id : String = "",
 
         result["name"] = name
         result["race"] = race
-        result["color"] = color
+//        result["color"] = color
         result["weight"] = weight
 //        result["size"] = size
         result["type"] = type

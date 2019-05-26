@@ -9,4 +9,5 @@ class OwnerUseCaseImpl(val petRepository: PetRepository, val preference : Prefer
     override fun getListPetBy(): LiveData<List<Pet>> {
         return petRepository.getListPetByName(preference.getUserName())
     }
+
 }
