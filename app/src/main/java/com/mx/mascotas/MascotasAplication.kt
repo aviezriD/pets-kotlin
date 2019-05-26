@@ -7,6 +7,8 @@ import com.facebook.stetho.Stetho
 import com.google.firebase.FirebaseApp
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.mx.mascotas.data.database.AppDataBase
+import com.mx.mascotas.data.database.entity.CatPet
+import com.mx.mascotas.data.database.entity.CatPetSize
 import com.mx.mascotas.data.database.entity.Role
 import com.mx.mascotas.data.executor.AppScheduleProvider
 import com.mx.mascotas.data.network.service.ApiService
@@ -63,6 +65,17 @@ class MascotasAplication: Application() {
             executor.execute {
                 database.roleDao().insert(Role(name = "Dueño"))
                 database.roleDao().insert(Role(1,"Veterinario"))
+
+                database.catPetDao().insert(CatPet(0,"Perro"))
+                database.catPetDao().insert(CatPet(1,"Gato"))
+                database.catPetDao().insert(CatPet(2,"Otro"))
+
+                database.catPetSizeDao().insert(CatPetSize(0,"Miniatura"))
+                database.catPetSizeDao().insert(CatPetSize(1,"Pequeño"))
+                database.catPetSizeDao().insert(CatPetSize(2,"Mediano"))
+                database.catPetSizeDao().insert(CatPetSize(3,"Grande"))
+                database.catPetSizeDao().insert(CatPetSize(4,"Gigante"))
+
                 appPreferences.setPreLoad(true)
             }
         }

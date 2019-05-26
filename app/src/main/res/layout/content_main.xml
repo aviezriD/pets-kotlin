@@ -5,13 +5,8 @@
 
     </data>
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-                                                         android:layout_width="match_parent"
-                                                         android:layout_height="match_parent">
-        <androidx.appcompat.widget.ActionBarContainer
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:theme="@style/Base.ThemeOverlay.AppCompat.ActionBar">
-
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
             <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
@@ -21,7 +16,6 @@
                     app:popupTheme="@style/Base.ThemeOverlay.AppCompat.Light"
                     android:fitsSystemWindows="true"/>
 
-        </androidx.appcompat.widget.ActionBarContainer>
 
         <FrameLayout android:id="@+id/container_main"
                      android:layout_width="match_parent"

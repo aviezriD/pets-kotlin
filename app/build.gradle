@@ -92,5 +92,10 @@ dependencies {
 
     //------Gson------
     implementation dependencies.data.gson
+
+    implementation dependencies.data.coroutinesCore
+    implementation dependencies.data.coroutinesKotlin
+
+    implementation dependencies.presentation.checkboxgroup
 }
 apply plugin: 'com.google.gms.google-services'

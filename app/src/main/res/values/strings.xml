@@ -70,15 +70,17 @@
 
     <!--date-->
     <string name="date_welcome">Hola bienvenido,\n¡aún no tienes citas!</string>
-    <string name="date_service">Servicio</string>
-    <string name="date_sub_service">Subservicio</string>
-    <string name="date_pet">Mascota</string>
-    <string name="date_type">Tipo</string>
-    <string name="date_observer">Observaciones</string>
+    <string name="date_service">Servicio :</string>
+    <string name="date_sub_service">Subservicio :</string>
+    <string name="date_pet">Mascota :</string>
+    <string name="date_type">Tipo :</string>
+    <string name="date_observer">Observaciones :</string>
     <string name="date_recomends">Recomendaciones</string>
     <string name="date_n_vaccine">Número de Serie de la Vacuna</string>
     <string name="date_next_vaccine">Próxima Vacuna</string>
     <string name="date_reason_cancel"></string>
+    <string name="date_day">Dia</string>
+    <string name="date_hour">Hora</string>
     <string name="date_"></string>
 
     <!--history-->
@@ -127,5 +129,6 @@
     <string name="tip_welcome">Hola bienvenido,\naun no hay tips</string>
     <string name="pet_peso">Peso Kg</string>
     <string name="servicios">Servicios</string>
+    <string name="sexo_de_la_mascota">Sexo de la mascota:</string>
     <!--<string name="tip_"></string>-->
 </resources>
