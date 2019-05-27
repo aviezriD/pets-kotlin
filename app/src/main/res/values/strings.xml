@@ -90,12 +90,13 @@
     <string name="client_welcome">Hola bienvenido,\n¡Aún no tienes Clientes!</string>
 
     <!--profile-->
-    <string name="profile_name">Nombre(s)</string>
+    <string name="profile_name">Nombre</string>
     <string name="profile_last_name">Apellido Paterno</string>
-    <string name="profile_second_name">Apellido Materno</string>
     <string name="profile_email">Email</string>
-    <string name="profile_pwd"> Constraseña</string>
+    <string name="profile_cedula">Cédula Profesional</string>
+    <string name="profile_telefo">Teléfono Celular</string>
     <string name="profile_button">Actualizar</string>
+
     <!--<string name="profile_"> </string>-->
 
     <!--menu dueño-->

@@ -56,6 +56,7 @@ class PetFragment: BaseFragment<FragmentPetBinding,PetViewModel>(),PetContract.N
              id = it.getString("id","")
          }
         subcribeToLiveData()
+
     }
 
     override fun getViewModel(): PetViewModel {

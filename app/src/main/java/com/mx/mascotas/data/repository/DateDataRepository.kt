@@ -6,7 +6,7 @@ import com.mx.mascotas.data.repository.datasource.date.DateDataFactory
 import com.mx.mascotas.domain.entity.ItemDate
 import com.mx.mascotas.domain.repository.DateRepository
 
-class DateDataRepository(): DateRepository {
+class DateDataRepository: DateRepository {
 
     private val dateFactory by lazy { DateDataFactory() }
     private val dataDb by lazy { dateFactory.datebaseReturn() }
@@ -22,5 +22,9 @@ class DateDataRepository(): DateRepository {
 
     override fun getInfoDateById(id: Int): LiveData<Date> {
         return dataDb.getDateById(id)
+    }
+
+    override fun insert(date: Date) {
+        dataDb.insert(date)
     }
 }

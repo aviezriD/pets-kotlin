@@ -16,6 +16,7 @@ import com.mx.mascotas.databinding.ActivityMainBinding
 import com.mx.mascotas.domain.usecase.main.MainUseCaseImpl
 import com.mx.mascotas.presentation.base.BaseActivity
 import com.mx.mascotas.presentation.ui.login.LoginActivity
+import com.mx.mascotas.presentation.ui.main.common.profile.ProfileFragment
 import com.mx.mascotas.presentation.ui.main.common.registerdate.RegisterDateFragment
 import com.mx.mascotas.presentation.ui.main.owner.OwnerFragment
 import com.mx.mascotas.presentation.ui.main.owner.pet.PetFragment
@@ -63,7 +64,7 @@ class MainActivity : BaseActivity<ActivityMainBinding,MainViewModel>(),MainContr
             R.id.proximasCitas -> Log.i("menu","citas")
             //R.id.promociones -> Log.i("menu","promo")
             R.id.agendarCitas -> goFragment(R.id.container_main, RegisterDateFragment())
-            R.id.miPerfil -> Log.i("menu","perfil")
+            R.id.miPerfil -> goFragment(R.id.container_main,ProfileFragment())
             R.id.misCitas -> goFragment(R.id.container_main, DateFragment())
            // R.id.vinculacion -> Log.i("menu","vinculacion")
            // R.id.historial -> Log.i("menu","historial")

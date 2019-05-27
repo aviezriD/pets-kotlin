@@ -8,4 +8,5 @@ interface DateRepository {
     fun getListDatebyUser(id: String):LiveData<List<ItemDate>>
     fun getListDateendingPbyUser(id: String):LiveData<List<ItemDate>>
     fun getInfoDateById(id: Int): LiveData<Date>
+    fun insert(date: Date)
 }
