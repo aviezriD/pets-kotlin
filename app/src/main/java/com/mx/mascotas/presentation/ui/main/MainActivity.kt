@@ -16,8 +16,10 @@ import com.mx.mascotas.databinding.ActivityMainBinding
 import com.mx.mascotas.domain.usecase.main.MainUseCaseImpl
 import com.mx.mascotas.presentation.base.BaseActivity
 import com.mx.mascotas.presentation.ui.login.LoginActivity
+import com.mx.mascotas.presentation.ui.main.common.registerdate.RegisterDateFragment
 import com.mx.mascotas.presentation.ui.main.owner.OwnerFragment
 import com.mx.mascotas.presentation.ui.main.owner.pet.PetFragment
+import com.mx.mascotas.presentation.ui.main.vet.date.DateFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
@@ -56,13 +58,15 @@ class MainActivity : BaseActivity<ActivityMainBinding,MainViewModel>(),MainContr
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
         when (p0.itemId) {
             R.id.close -> {finish(); startActivity(Intent(this,LoginActivity::class.java))}
-            R.id.misMascotas -> Log.i("menu","masco")
+            R.id.misMascotas -> goFragment(R.id.container_main, OwnerFragment())
+
             R.id.proximasCitas -> Log.i("menu","citas")
-            R.id.promociones -> Log.i("menu","promo")
-            R.id.tips -> Log.i("menu","tips")
+            //R.id.promociones -> Log.i("menu","promo")
+            R.id.agendarCitas -> goFragment(R.id.container_main, RegisterDateFragment())
             R.id.miPerfil -> Log.i("menu","perfil")
-            R.id.vinculacion -> Log.i("menu","vinculacion")
-            R.id.historial -> Log.i("menu","historial")
+            R.id.misCitas -> goFragment(R.id.container_main, DateFragment())
+           // R.id.vinculacion -> Log.i("menu","vinculacion")
+           // R.id.historial -> Log.i("menu","historial")
             R.id.infoCliente -> Log.i("menu","clientes")
             else -> Log.i("menu","other")
         }

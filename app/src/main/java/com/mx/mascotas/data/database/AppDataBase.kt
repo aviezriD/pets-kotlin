@@ -34,6 +34,7 @@ abstract class AppDataBase: RoomDatabase() {
     abstract fun catDateStatusDao() : CatDateStatusDao
     abstract  fun catServicesDao() : CatServicesDao
     abstract fun veterinaryDao() :VeterinaryDao
+   // abstract fun catEstatusVacunaDao(): CatEstatusVacunaDao
 
 
 }

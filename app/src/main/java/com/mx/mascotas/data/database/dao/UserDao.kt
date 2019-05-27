@@ -1,5 +1,6 @@
 package com.mx.mascotas.data.database.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -16,4 +17,7 @@ interface UserDao : BaseDao<User> {
 
     @Insert
     fun insertUser(user: User) : Single<Long>
+
+    @Query("select * from user where idRole =:idRole")
+    fun getListUserByIdRole(idRole: Int): LiveData<List<User>>
 }

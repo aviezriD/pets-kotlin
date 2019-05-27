@@ -17,10 +17,11 @@ import com.bumptech.glide.Glide
 import com.google.android.material.navigation.NavigationView
 import com.mx.mascotas.BuildConfig
 import com.mx.mascotas.R
-import com.mx.mascotas.data.database.entity.CatPet
-import com.mx.mascotas.data.database.entity.CatPetSize
+import com.mx.mascotas.data.database.entity.*
+import com.mx.mascotas.domain.entity.ItemDate
 import com.mx.mascotas.domain.entity.ItemPet
 import com.mx.mascotas.presentation.ui.main.owner.pet.adapter.PetAdapter
+import com.mx.mascotas.presentation.ui.main.vet.date.adapter.DateAdapter
 import java.lang.Exception
 
 
@@ -77,15 +78,39 @@ import java.lang.Exception
     fun setListCatPet(spinner: Spinner?, list: List<CatPet>){
     spinner?.adapter = ArrayAdapter<CatPet>(spinner?.context,R.layout.support_simple_spinner_dropdown_item,list)
     }
+
     @BindingAdapter("app:adapter")
     fun setListCatPetSize(spinner: Spinner?, list: List<CatPetSize>){
     spinner?.adapter = ArrayAdapter<CatPetSize>(spinner?.context,R.layout.support_simple_spinner_dropdown_item,list)
+    }
 
+    @BindingAdapter("app:adapter")
+    fun setListUser(spinner: Spinner?, list: List<User>){
+    spinner?.adapter = ArrayAdapter<User>(spinner?.context,R.layout.support_simple_spinner_dropdown_item,list)
+    }
+
+    @BindingAdapter("app:adapter")
+    fun setListCatService(spinner: Spinner?, list: List<CatService>){
+    spinner?.adapter = ArrayAdapter<CatService>(spinner?.context,R.layout.support_simple_spinner_dropdown_item,list)
+    }
+    @BindingAdapter("app:adapter")
+    fun setListPet(spinner: Spinner?, list: List<Pet>){
+    spinner?.adapter = ArrayAdapter<Pet>(spinner?.context,R.layout.support_simple_spinner_dropdown_item,list)
     }
 
     @BindingAdapter("adapter")
     fun setDataKpi(recyclerView: RecyclerView?, list: List<ItemPet>?){
         val adapter : PetAdapter? = try { recyclerView?.adapter as PetAdapter } catch (e : Exception){null}
+        adapter?.let {
+            list?.let {
+                adapter.list = it
+            }
+            it.notifyDataSetChanged()
+        }
+    }
+    @BindingAdapter("adapter")
+    fun setDataDate(recyclerView: RecyclerView?, list: List<ItemDate>?){
+        val adapter : DateAdapter? = try { recyclerView?.adapter as DateAdapter } catch (e : Exception){null}
         adapter?.let {
             list?.let {
                 adapter.list = it

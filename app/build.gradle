@@ -87,7 +87,7 @@ dependencies {
     implementation dependencies.data.retrofitGson
     implementation dependencies.data.retrofitAdapter
 
-    //------Interceptor------
+    //------Interceptor------git
     implementation dependencies.data.interceptor
 
     //------Gson------

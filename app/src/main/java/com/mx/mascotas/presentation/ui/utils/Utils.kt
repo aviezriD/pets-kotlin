@@ -72,6 +72,21 @@ object Utils {
 
     }
 
+    fun longToHour(date: Long):String{
+        val temp = Calendar.getInstance()
+        temp.timeInMillis = date
+        return dateTimeToHour(temp.time)
+    }
+
+    fun dateTimeToHour(date: Date): String {
+        if (date != null) {
+            val format = SimpleDateFormat("HH:mm:ss")
+            return format.format(date)
+        } else {
+            return ""
+        }
+    }
+
 
     fun generaDatePickerDialog(textInputEditText: TextInputEditText, enable: Boolean, context: Context) {
         val fechaActual = Calendar.getInstance()

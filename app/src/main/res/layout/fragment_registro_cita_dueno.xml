@@ -41,6 +41,7 @@
                     android:id="@+id/spinner" android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
                     app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+                    app:adapter="@{registerDateViewModel.listPet}"
                     app:layout_constraintTop_toBottomOf="@+id/textView10" android:layout_marginTop="8dp"/>
 
             <TextView
@@ -58,6 +59,7 @@
                     android:id="@+id/spinnerServicios" android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
                     app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+                    app:adapter="@{registerDateViewModel.listService}"
                     app:layout_constraintTop_toBottomOf="@+id/textServicios" android:layout_marginTop="8dp"/>
 
             <TextView
@@ -117,6 +119,7 @@
                     android:id="@+id/spinnerVet" android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
                     app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+                    app:adapter="@{registerDateViewModel.listVet}"
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout21" android:layout_marginTop="8dp"/>
 
 

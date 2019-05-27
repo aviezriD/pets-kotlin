@@ -1,171 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-                                                   android:layout_height="match_parent">
-
-    <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/detail_date" app:layout_constraintStart_toEndOf="@+id/imageView4"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp"/>
-    <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/detail_hour" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp"/>
-    <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" app:srcCompat="@drawable/ic_event_black_24px"
-            android:id="@+id/imageView4"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp" android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"/>
-    <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" app:srcCompat="@android:drawable/ic_menu_recent_history"
-            android:id="@+id/imageView5"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toStartOf="@+id/detail_hour"
-            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"/>
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="0dp"
-            android:layout_height="4dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:background="#93C1ED" android:id="@+id/linearLayout"
-            app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4" android:layout_marginRight="8dp"
-            android:layout_marginEnd="8dp" android:layout_marginLeft="8dp" android:layout_marginStart="8dp">
-    </LinearLayout>
-    <TextView
-            android:text="@string/date_service"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView14" android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp" android:textStyle="bold" android:textColor="@android:color/black"/>
-    <TextView
-            android:text="@string/date_sub_service"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView15" app:layout_constraintStart_toStartOf="@+id/linearLayout"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView14" android:textStyle="bold"
-            android:textColor="@android:color/black"/>
-    <TextView
-            android:text="@string/date_pet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView16" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView15"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp" android:textStyle="bold" android:textColor="@android:color/black"/>
-    <TextView
-            android:text="@string/date_type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView17" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView16"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp" android:textStyle="bold" android:textColor="@android:color/black"/>
-    <TextView
-            android:text="@string/date_observer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView18" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView17"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp" android:textStyle="bold" android:textColor="@android:color/black"/>
-    <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView19"
-            tools:layout_editor_absoluteX="159dp" tools:layout_editor_absoluteY="60dp"/>
-    <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:gravity="start|top"
-            android:ems="10"
-            android:id="@+id/editText" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView18" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"/>
-    <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:id="@+id/textView13"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout30" android:layout_marginTop="16dp"/>
-    <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView13" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:id="@+id/textInputLayout31">
-
-        <com.google.android.material.textfield.TextInputEditText
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="detailDateViewModel" type="com.mx.mascotas.presentation.ui.main.common.detaildate.DetailDateViewModel"/>
+    </data>
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+                                           android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/date_day" android:inputType="date"/>
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp" android:layout_marginRight="8dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout31" android:id="@+id/textInputLayout32">
+                android:layout_height="match_parent">
 
-        <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/date_hour" android:inputType="time"/>
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/editText" android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp" android:id="@+id/textInputLayout29">
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detail_date" app:layout_constraintStart_toEndOf="@+id/imageView4"
+                    android:layout_marginLeft="8dp" android:layout_marginStart="8dp" app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="8dp"/>
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detail_hour" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp" app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="8dp"/>
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/ic_event_black_24px"
+                    android:id="@+id/imageView4"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp" android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"/>
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" app:srcCompat="@android:drawable/ic_menu_recent_history"
+                    android:id="@+id/imageView5"
+                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toStartOf="@+id/detail_hour"
+                    android:layout_marginEnd="8dp" android:layout_marginRight="8dp"/>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="#93C1ED" android:id="@+id/linearLayout"
+                    app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView4" android:layout_marginRight="8dp"
+                    android:layout_marginEnd="8dp" android:layout_marginLeft="8dp" android:layout_marginStart="8dp">
+            </LinearLayout>
+            <TextView
+                    android:text="@string/date_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView14" android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                    app:layout_constraintStart_toStartOf="@+id/linearLayout" android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp" android:textStyle="bold" android:textColor="@android:color/black"/>
+            <TextView
+                    android:text="@string/date_sub_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView15" app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                    android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textView14" android:textStyle="bold"
+                    android:textColor="@android:color/black"/>
+            <TextView
+                    android:text="@string/date_pet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView16" android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textView15"
+                    app:layout_constraintStart_toStartOf="@+id/linearLayout" android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp" android:textStyle="bold" android:textColor="@android:color/black"/>
+            <TextView
+                    android:text="@string/date_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView17" android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textView16"
+                    app:layout_constraintStart_toStartOf="@+id/linearLayout" android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp" android:textStyle="bold" android:textColor="@android:color/black"/>
+            <TextView
+                    android:text="@string/date_observer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView18" android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textView17"
+                    app:layout_constraintStart_toStartOf="@+id/linearLayout" android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp" android:textStyle="bold" android:textColor="@android:color/black"/>
+            <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:gravity="start|top"
+                    android:ems="10"
+                    android:id="@+id/editText" android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textView18" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"/>
+            <TextView
+                    android:text="@{detailDateViewModel.field3}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:id="@+id/textView13"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout30" android:layout_marginTop="16dp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginLeft="8dp" android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:id="@+id/textInputLayout31">
 
-        <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="hint"/>
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout29" android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp" android:id="@+id/textInputLayout30">
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/date_day" android:inputType="date" android:id="@+id/date_next"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp" android:layout_marginRight="8dp" app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout31" android:id="@+id/textInputLayout32">
 
-        <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="hint"/>
-    </com.google.android.material.textfield.TextInputLayout>
-    <Button
-            android:text="Button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/button9" android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout32" app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="24dp" android:layout_marginStart="24dp"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/date_hour" android:inputType="time" android:id="@+id/hour_next"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/editText" android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp" app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp" android:id="@+id/textInputLayout29">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@{detailDateViewModel.field}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout29" android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp" app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp" android:id="@+id/textInputLayout30">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@{detailDateViewModel.field2}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                    android:text="Finalizar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button9" android:layout_marginTop="24dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout32"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="8dp" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginRight="24dp" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginLeft="24dp" android:layout_marginStart="24dp"/>
+            <TextView
+                    android:text="@{detailDateViewModel.data.type}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView48"
+                    app:layout_constraintTop_toTopOf="@+id/textView17"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView17"
+                    app:layout_constraintStart_toEndOf="@+id/textView18" android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"/>
+            <TextView
+                    android:text="@{detailDateViewModel.data.pet}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView49" app:layout_constraintStart_toStartOf="@+id/textView48"
+                    app:layout_constraintTop_toTopOf="@+id/textView16"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView16"/>
+            <TextView
+                    android:text="@{detailDateViewModel.data.subservice}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView50" app:layout_constraintStart_toStartOf="@+id/textView49"
+                    app:layout_constraintTop_toTopOf="@+id/textView15"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView15"/>
+            <TextView
+                    android:text="@{detailDateViewModel.data.service}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView51" app:layout_constraintStart_toStartOf="@+id/textView50"
+                    app:layout_constraintTop_toTopOf="@+id/textView14"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView14"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
