@@ -84,6 +84,25 @@ class MascotasAplication: Application() {
                 database.catServicesDao().insert(CatService(1, "Higiene"))
                 database.catServicesDao().insert(CatService(2, "Vacuna"))
 
+                database.catVetDiaDao().insert(CatVetDia(0, "Lunes"))
+                database.catVetDiaDao().insert(CatVetDia(1, "Martes"))
+                database.catVetDiaDao().insert(CatVetDia(2, "Miércoles"))
+                database.catVetDiaDao().insert(CatVetDia(3, "Jueves"))
+                database.catVetDiaDao().insert(CatVetDia(4, "Viernes"))
+                database.catVetDiaDao().insert(CatVetDia(5, "Sábado"))
+
+                database.catVetHorasDao().insert(CatVetHoras(0,"9:00-10:00"))
+                database.catVetHorasDao().insert(CatVetHoras(1, "10:00-11:00"))
+                database.catVetHorasDao().insert(CatVetHoras(2, "11:00-12:00"))
+                database.catVetHorasDao().insert(CatVetHoras(3, "12:00-13:00"))
+                database.catVetHorasDao().insert(CatVetHoras(4, "13:00-14:00"))
+                database.catVetHorasDao().insert(CatVetHoras(5, "14:00-15:00"))
+                database.catVetHorasDao().insert(CatVetHoras(5, "15:00-16:00"))
+                database.catVetHorasDao().insert(CatVetHoras(5, "16:00-17:00"))
+                database.catVetHorasDao().insert(CatVetHoras(5, "17:00-18:00"))
+
+
+
                // database.catEstatusVacunaDao().insert(CatEstatusVacuna(0, "Corrupta"))
                 //database.catEstatusVacunaDao().insert(CatEstatusVacuna(1, "Segura"))
 
