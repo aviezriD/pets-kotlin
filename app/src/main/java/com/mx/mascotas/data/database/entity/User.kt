@@ -9,6 +9,7 @@ data class User(var id : Int = 0,
                 var idRole : Int = 0,
                 @PrimaryKey var user : String = "",
                 var name : String = "",
+                var cedula : String = "",
                 var lastName : String = "",
                 var email : String = "",
                 var password : String = "",
@@ -18,13 +19,15 @@ data class User(var id : Int = 0,
 
     fun toMap () : Map<String, Any> {
         val result =  HashMap<String, Any>()
-        result["user"] = user
-        result["email"] = email
-        result["name"] = name
-        result["lastName"] = lastName
-        result["phone"] = phone
-        result["password"] = password
-        result["token"] = token
+        result["user"]=user
+        result["name"]=name
+        result["cedula"]=cedula
+        result["lastName"]=lastName
+        result["email"]=email
+        result["password"]=password
+        result["phone"]= phone
+        result["token"]= token
+        result["status"]=status
 
         return  result
     }

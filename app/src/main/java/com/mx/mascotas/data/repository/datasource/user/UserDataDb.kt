@@ -9,4 +9,6 @@ class UserDataDb(private val daoUser: UserDao) : BaseDb<User>(daoUser), UserData
     override fun login(user: String,  type: Int): Observable<User> {
         return daoUser.getUserSingle(user,type).toObservable()
     }
+
+
 }
