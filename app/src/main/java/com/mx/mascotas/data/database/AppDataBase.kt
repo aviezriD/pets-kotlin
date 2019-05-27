@@ -20,7 +20,8 @@ import com.mx.mascotas.data.database.entity.User
         CatPetSize::class,
         CatDateStatus::class,
         CatService::class,
-        Pet::class],
+        Pet::class,
+        Veterinary::class],
     version = 1,
     exportSchema = false)
 abstract class AppDataBase: RoomDatabase() {
@@ -32,6 +33,7 @@ abstract class AppDataBase: RoomDatabase() {
     abstract fun dateDao() : DateDao
     abstract fun catDateStatusDao() : CatDateStatusDao
     abstract  fun catServicesDao() : CatServicesDao
+    abstract fun veterinaryDao() :VeterinaryDao
 
 
 }
