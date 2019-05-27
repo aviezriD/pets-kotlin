@@ -18,5 +18,4 @@ class OwnerUseCaseImpl(val petRepository: PetRepository, val preference : Prefer
     override fun deletePet(id: String) {
         petRepository.deletePet(Pet(id = id))
     }
-
 }
