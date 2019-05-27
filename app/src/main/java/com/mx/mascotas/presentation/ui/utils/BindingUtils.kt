@@ -13,6 +13,7 @@ import androidx.core.content.FileProvider
 import com.google.android.material.textfield.TextInputLayout
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.google.android.material.navigation.NavigationView
 import com.mx.mascotas.BuildConfig
 import com.mx.mascotas.R
@@ -97,9 +98,19 @@ import java.lang.Exception
         path?.let {
             if (it.isNotEmpty()){
                 view?.let {v ->
-                    v.setImageURI(Uri.parse(path))
+
+                    Glide
+                        .with(view)
+                        .load(Uri.parse(path))
+                        .centerCrop()
+                        .placeholder(R.drawable.ic_icon_launcher_black)
+                        .into(view)
+//                    v.setImageURI(Uri.parse(path))
                 }
             }
         }
-
+    }
+    @BindingAdapter("app:selection")
+    fun setItemSelect (spinner: Spinner?, position: Int){
+        spinner?.setSelection(position,true)
     }

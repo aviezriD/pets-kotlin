@@ -2,6 +2,7 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
         xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
+        <import type="android.view.View"/>
         <variable name="ownerViewModel" type="com.mx.mascotas.presentation.ui.main.owner.OwnerViewModel"/>
     </data>
     <com.google.android.material.circularreveal.CircularRevealFrameLayout
@@ -13,6 +14,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/welcome" android:layout_gravity="center"
                 android:textColor="@color/colorAccent" android:textSize="18sp" android:gravity="center"
+                android:visibility="@{ownerViewModel.enable ? View.VISIBLE :View.GONE }"
                 android:textStyle="bold"/>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:layout_width="wrap_content"

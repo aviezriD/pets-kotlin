@@ -23,6 +23,8 @@ interface PetContract {
                      )
         fun addCatType(list : List<CatPet>)
         fun addCatTypeSize(list : List<CatPetSize>)
+        fun getPetById(id: String)
+        fun setIndices(index : Int , index2: Int)
 
 
     }

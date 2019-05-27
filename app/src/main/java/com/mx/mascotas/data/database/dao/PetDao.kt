@@ -8,4 +8,7 @@ import com.mx.mascotas.data.database.entity.Pet
 interface PetDao:BaseDao<Pet> {
     @Query("select * from Pet where owner =:user")
     fun getListPetByName(user : String): LiveData<List<Pet>>
+
+    @Query("select * from pet where id =:id")
+    fun getPetById(id: String): LiveData<Pet>
 }

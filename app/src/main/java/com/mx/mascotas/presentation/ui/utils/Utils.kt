@@ -49,6 +49,18 @@ object Utils {
         }
 
     }
+
+    fun longToDate(date: Long): String {
+        val temp = Calendar.getInstance()
+            temp.timeInMillis = date
+        return converDateToString(temp.time)
+    }
+
+    fun converDateToString(date: Date): String {
+        val fomater = SimpleDateFormat(formats[1], Locale.getDefault())
+        return fomater.format(date)
+    }
+
     fun stringToDate(fecha: String): Date? {
         val formatter = SimpleDateFormat(FORMAT_DATE)
         try {

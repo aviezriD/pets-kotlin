@@ -3,20 +3,15 @@ package com.mx.mascotas.presentation.ui.main.owner.pet
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Base64
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Toast
 import androidx.core.content.FileProvider
+import androidx.core.view.get
 import androidx.lifecycle.Observer
-import com.google.android.material.textfield.TextInputEditText
 import com.mx.mascotas.BR
 import com.mx.mascotas.BuildConfig
 import com.mx.mascotas.MascotasAplication
@@ -31,10 +26,8 @@ import com.mx.mascotas.presentation.ui.utils.Utils
 import com.mx.mascotas.presentation.ui.utils.Utils.generaDatePickerDialog
 import kotlinx.android.synthetic.main.fragment_pet.*
 import kotlinx.android.synthetic.main.fragment_pet.checks
-import kotlinx.android.synthetic.main.fragment_sign.*
-import java.io.ByteArrayOutputStream
+import kotlinx.android.synthetic.main.fragment_pet.view.*
 import java.io.File
-import java.io.FileNotFoundException
 import java.io.IOException
 
 class PetFragment: BaseFragment<FragmentPetBinding,PetViewModel>(),PetContract.Navigator,
@@ -47,6 +40,7 @@ class PetFragment: BaseFragment<FragmentPetBinding,PetViewModel>(),PetContract.N
     private var type = 0
     private var typeSize = 0
     private var sex = false
+    private var id = ""
 
     override fun getIdLayout(): Int {
         return R.layout.fragment_pet
@@ -58,6 +52,9 @@ class PetFragment: BaseFragment<FragmentPetBinding,PetViewModel>(),PetContract.N
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+         arguments?.let {
+             id = it.getString("id","")
+         }
         subcribeToLiveData()
     }
 
@@ -68,12 +65,9 @@ class PetFragment: BaseFragment<FragmentPetBinding,PetViewModel>(),PetContract.N
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
         date.setOnTouchListener { v, event ->
             if (v.id == date.id && event.action == 0 )
                 generaDatePickerDialog(date,true,view.context)
-
             true
         }
         button5.setOnClickListener {
@@ -127,6 +121,11 @@ class PetFragment: BaseFragment<FragmentPetBinding,PetViewModel>(),PetContract.N
 
         }
 
+        spinner.onItemSelectedListener = this
+        spinner2.onItemSelectedListener = this
+        if (id.isNotEmpty())
+            viewModelI.getPetById(id)
+
     }
 
     override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -135,8 +134,8 @@ class PetFragment: BaseFragment<FragmentPetBinding,PetViewModel>(),PetContract.N
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         parent?.let {
             when(it.selectedItem ){
-                is  CatPet -> type = it.id
-                is CatPetSize -> typeSize = it.id
+                is  CatPet -> type = (it.selectedItem  as CatPet).id
+                is CatPetSize -> typeSize = (it.selectedItem  as CatPetSize).id
             }
         }
 
@@ -172,6 +171,25 @@ class PetFragment: BaseFragment<FragmentPetBinding,PetViewModel>(),PetContract.N
                 viewModelI.addCatTypeSize(it)
             }
         })
+
+        viewModelI.petEdit.observe(this, Observer {
+
+            it?.let {
+                pet_name.append(it.name)
+                pet_race.append(it.race)
+                pet_weigth.append(it.weight.toString())
+                type = it.type
+                typeSize = it.typeSize
+                sex = it.sex
+                pet_allergy.append(it.allergy)
+                date.append(Utils.longToDate(it.dateBorn))
+                pet_signs.append(it.signs)
+                button4?.text = "CAMBIAR FOTO"
+                button5?.text = "ACTUALIZAR"
+                viewModelI.setIndices(it.type,it.typeSize)
+
+            }
+        })
     }
 
     override fun showMessage(msg: String) {
@@ -183,33 +201,16 @@ class PetFragment: BaseFragment<FragmentPetBinding,PetViewModel>(),PetContract.N
 
         if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE_TAKE_PHOTO) run {
 
-            button4.text = "CAMBIAR FOTO"
-            val bitmap: Bitmap
+            button4?.text = "CAMBIAR FOTO"
 
             context?.let {
                 try {
-                    /*var urid: Uri? = null
-                    if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-                        urid = FileProvider.getUriForFile(it, BuildConfig.APPLICATION_ID, photoFile!!)
-                    } else {
-                        urid = Uri.fromFile(photoFile)
-                    }
-                    bitmap = BitmapFactory.decodeStream(it.contentResolver.openInputStream(urid))
-
-                    val byteArrayOutputStream = ByteArrayOutputStream()
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 20, byteArrayOutputStream)
-                    val byteArray = byteArrayOutputStream.toByteArray()*/
-
-//                    photo = photoFile?.absolutePath ?: ""
                     photo = photoFile?.toURI().toString()
                 } catch (e: Exception) {
                     e.printStackTrace()
                     Toast.makeText(context,"Ha ocurrido un error ",Toast.LENGTH_SHORT).show()
-
                 }
-
             }
-
         }
     }
 

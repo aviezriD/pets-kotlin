@@ -9,7 +9,7 @@ import durdinapps.rxfirebase2.RxFirebaseChildEvent
 import durdinapps.rxfirebase2.RxFirebaseDatabase
 import io.reactivex.Observable
 
-class PetDataFireBase(private var firebaseDatabase: FirebaseDatabase) : PetData<Observable<RxFirebaseChildEvent<DataSnapshot>>,Observable<Boolean>> {
+class PetDataFireBase(private var firebaseDatabase: FirebaseDatabase) : PetData<Observable<RxFirebaseChildEvent<DataSnapshot>>,Observable<RxFirebaseChildEvent<DataSnapshot>>,Observable<Boolean>> {
     override fun insert(obj: Pet): Observable<Boolean> {
         val data = PATH_PET.plus(obj.owner)
         return RxFirebaseUtils.observeValueEvent(firebaseDatabase.reference.child(data))
@@ -40,5 +40,9 @@ class PetDataFireBase(private var firebaseDatabase: FirebaseDatabase) : PetData<
         val data = PATH_PET.plus(user)
         return RxFirebaseDatabase.observeChildEvent(firebaseDatabase.reference.child(data))
             .toObservable()
+    }
+
+    override fun getPetById(id: String): Observable<RxFirebaseChildEvent<DataSnapshot>> {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

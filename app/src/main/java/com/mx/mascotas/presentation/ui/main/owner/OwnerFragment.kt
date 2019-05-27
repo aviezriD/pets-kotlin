@@ -1,6 +1,7 @@
 package com.mx.mascotas.presentation.ui.main.owner
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -43,6 +44,14 @@ class OwnerFragment: BaseFragment<FragmentOwnerBinding,OwnerViewModel>(),OwnerCo
         owner_pet.setHasFixedSize(true)
         owner_pet.adapter = adapter
 
+        adapter.setOnclickInterface(object : PetAdapter.OnclickPetListener{
+            override fun action(id: String, operation: Int) {
+                when(operation){
+                    0 ->viewModelI.deletePet(id)
+                    1 -> goDetail(id)
+                }
+            }
+        })
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,6 +65,13 @@ class OwnerFragment: BaseFragment<FragmentOwnerBinding,OwnerViewModel>(),OwnerCo
                 viewModelI.addPets(it)
             }
         })
+    }
 
+    override fun goDetail(id: String) {
+            goFragment(R.id.container_main,PetFragment().apply {
+                val args = Bundle()
+                args.putCharSequence("id", id)
+                this.arguments = args
+            })
     }
 }
