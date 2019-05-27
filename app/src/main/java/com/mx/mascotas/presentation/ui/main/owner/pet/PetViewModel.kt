@@ -1,10 +1,10 @@
 package com.mx.mascotas.presentation.ui.main.owner.pet
 
 import androidx.databinding.ObservableArrayList
-import androidx.databinding.ObservableBoolean
-import androidx.databinding.ObservableField
+import androidx.databinding.ObservableInt
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import com.mx.mascotas.data.database.entity.CatPet
 import com.mx.mascotas.data.database.entity.CatPetSize
 import com.mx.mascotas.data.database.entity.Pet
@@ -32,6 +32,7 @@ BaseViewModel<PetContract.Navigator,PetUseCase>(scheduleProvider,navigator,userc
     var listCatPat : LiveData<List<CatPet>> = MutableLiveData()
 
     var listCatPatSize : LiveData<List<CatPetSize>> = MutableLiveData()
+    var petEdit: LiveData<Pet> = MutableLiveData()
 
     val userLiveData = MutableLiveData<String>()
     val raceLiveData = MutableLiveData<String>()
@@ -42,12 +43,26 @@ BaseViewModel<PetContract.Navigator,PetUseCase>(scheduleProvider,navigator,userc
     val allergyLiveData = MutableLiveData<String>()
     val dateBornLiveData = MutableLiveData<String>()
     val signsLiveData = MutableLiveData<String>()
+    val idEdith = MutableLiveData<String>()
+
+    val selectionType = ObservableInt()
+    val selectionTypeSize = ObservableInt()
+
 
     init {
         listCatPat = usercase.getTypePet()
         listCatPatSize = usercase.getListCatPetSize()
+        petEdit = Transformations.switchMap(idEdith){ id -> usercase.getPetById(id) }
     }
 
+    override fun setIndices(index: Int, index2: Int) {
+        selectionType.set(index)
+        selectionTypeSize.set(index)
+    }
+
+    override fun getPetById(id: String) {
+        idEdith.value = id
+    }
 
     override fun onCleared() {
         super.onCleared()
@@ -126,14 +141,11 @@ BaseViewModel<PetContract.Navigator,PetUseCase>(scheduleProvider,navigator,userc
             return
         }
 
-
         scope.launch {
             val pet = Pet("",name,race,weight.toFloat(),type,sex,sizeType,allergy,date?.time ?: 0,signs,photo,"")
             useCase.register(pet)
         }
         navigator.success()
-
-
-
     }
+
 }

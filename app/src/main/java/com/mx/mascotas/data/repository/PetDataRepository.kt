@@ -55,8 +55,16 @@ class PetDataRepository: PetRepository {
         return Transformations.map(petDb.getListPetByName(user)) { l ->
             val result = ArrayList<ItemPet>()
             for ( i in l)
-                result.add(ItemPet(i.name,i.photo,getNameByType(i.type),i.race))
+                result.add(ItemPet(i.id,i.name,i.photo,getNameByType(i.type),i.race))
             result
         }
+    }
+
+    override fun deletePet(pet: Pet) {
+        petDb.delete(pet)
+    }
+
+    override fun getPetById(id: String): LiveData<Pet> {
+        return petDb.getPetById(id)
     }
 }

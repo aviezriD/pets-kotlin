@@ -14,4 +14,6 @@ interface PetRepository {
     fun getListPetByName(user : String): LiveData<List<Pet>>
     fun getListPetByNameMinimal(user : String): LiveData<List<ItemPet>>
     fun getListCatPetSize() : LiveData<List<CatPetSize>>
+    fun deletePet(pet: Pet)
+    fun getPetById(id : String) : LiveData<Pet>
 }

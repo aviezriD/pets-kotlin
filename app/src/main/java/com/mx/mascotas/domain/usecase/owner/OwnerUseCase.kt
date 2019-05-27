@@ -7,4 +7,5 @@ import com.mx.mascotas.domain.entity.ItemPet
 interface OwnerUseCase {
     fun getListPetBy(): LiveData<List<Pet>>
     fun getListPetByNameMinimal(): LiveData<List<ItemPet>>
+    fun deletePet(id: String)
 }
