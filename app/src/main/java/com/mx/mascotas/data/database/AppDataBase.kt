@@ -21,6 +21,8 @@ import com.mx.mascotas.data.database.entity.User
         CatDateStatus::class,
         CatService::class,
         Pet::class,
+        CatVetHoras::class,
+        CatVetDia::class,
         Veterinary::class],
     version = 1,
     exportSchema = false)
@@ -34,6 +36,10 @@ abstract class AppDataBase: RoomDatabase() {
     abstract fun catDateStatusDao() : CatDateStatusDao
     abstract  fun catServicesDao() : CatServicesDao
     abstract fun veterinaryDao() :VeterinaryDao
+    abstract fun catVetDiaDao() : CatVetDiaDao
+    abstract fun catVetHorasDao() : CatVetHorasDao
+
+   // abstract fun catEstatusVacunaDao(): CatEstatusVacunaDao
 
 
 }

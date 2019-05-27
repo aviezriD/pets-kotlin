@@ -14,4 +14,8 @@ class OwnerUseCaseImpl(val petRepository: PetRepository, val preference : Prefer
     override fun getListPetByNameMinimal(): LiveData<List<ItemPet>> {
         return petRepository.getListPetByNameMinimal(preference.getUserName())
     }
+
+    override fun deletePet(id: String) {
+        petRepository.deletePet(Pet(id = id))
+    }
 }

@@ -22,7 +22,6 @@ class DateAdapter (var list: List<ItemDate>): RecyclerView.Adapter<DateAdapter.I
     override fun getItemCount(): Int {
         return list.size
     }
-
     inner class ItemDateHolder(var itemDate: ItemDateBinding):RecyclerView.ViewHolder(itemDate.root){
         private val adapter = ServiceAdapter(emptyList())
         init {
@@ -34,7 +33,6 @@ class DateAdapter (var list: List<ItemDate>): RecyclerView.Adapter<DateAdapter.I
 
         fun bind(item: ItemDate){
             itemDate.item = item
-            adapter.add(item.services)
             itemDate.executePendingBindings()
         }
     }

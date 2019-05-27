@@ -58,4 +58,5 @@ class UserDataFireBase(private var firebaseDatabase: FirebaseDatabase): UserData
         return RxFirebaseUtils.apply(firebaseDatabase.reference.child(data).removeValue())
             .flatMap { RxFirebaseUtils.apply(firebaseDatabase.reference.child(pwd).removeValue()) }
     }
+
 }

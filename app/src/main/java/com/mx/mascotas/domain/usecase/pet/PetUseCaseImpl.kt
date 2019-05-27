@@ -1,5 +1,6 @@
 package com.mx.mascotas.domain.usecase.pet
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import com.mx.mascotas.data.database.entity.CatPet
 import com.mx.mascotas.data.database.entity.CatPetSize
@@ -21,5 +22,14 @@ class PetUseCaseImpl(private val petRepository: PetRepository,val preference : P
 
     override fun getListCatPetSize(): LiveData<List<CatPetSize>> {
         return petRepository.getListCatPetSize()
+    }
+
+    override fun deletePet(id: String) {
+        return petRepository.deletePet(Pet(id = id))
+    }
+
+    override fun getPetById(id: String): LiveData<Pet> {
+        Log.i("getPetById","id")
+        return petRepository.getPetById(id)
     }
 }

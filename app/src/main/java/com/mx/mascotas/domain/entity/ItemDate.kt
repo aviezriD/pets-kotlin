@@ -1,7 +1,15 @@
 package com.mx.mascotas.domain.entity
 
-data class ItemDate(var namePet : String,
+import com.mx.mascotas.data.database.entity.CatSubService
+
+data class ItemDate( var idPet: Int,
+                     var namePet : String,
                     var hour : String,
                     var date : String,
-                    var services : List<String>) {
+                    var typeService : String,
+                    var typeSubservice: String,
+                    var idUser: Int,
+                    var name: String,
+                    var estatus :Int) {
+
 }

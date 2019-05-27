@@ -10,5 +10,7 @@ interface PetUseCase {
     fun register(pet : Pet)
     fun getTypePet(): LiveData<List<CatPet>>
     fun getListCatPetSize() : LiveData<List<CatPetSize>>
+    fun deletePet(id: String)
+    fun getPetById(id: String): LiveData<Pet>
 
 }

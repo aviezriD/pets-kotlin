@@ -45,8 +45,8 @@
 
     <!--pet-->
     <string name="welcome">Hola bienvenido,\nregistra a tu mascota</string>
-    <string name="sex_1">Maculino</string>
-    <string name="sex_2">Femenino</string>
+    <string name="sex_1">Macho</string>
+    <string name="sex_2">Hembra</string>
     <string name="date_born">Fecha de nacimiento</string>
     <string name="pet_title">Registro de Mascotas</string>
     <string name="pet_sub_title">Ingresa los datos de tu mascota.</string>
@@ -139,6 +139,21 @@
     <!--Veterinarios-->
     <string name="vet_title">Veterinarios</string>
     <string name="pet_sub_vet">Seleccione el veterinario con el que desea agendar cita</string>
+    <string name="vet_mi_agenda">Mi agenda</string>
+    <string name="date_welcome_owner">Hola, agenda una cita para tu mascota!</string>
+
+
+
+
+
+
+    <!--Datepicker-->
+
+    <string name="titlulo_pickers">Obtener fecha y hora</string>
+
+    <string name="formato_fecha">dd/mm/yyyy</string>
+    <string name="formato_hora">hh:mm</string>
+
 
 
 
