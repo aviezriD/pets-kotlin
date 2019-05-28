@@ -91,6 +91,8 @@ class MascotasAplication: Application() {
                 database.catVetDiaDao().insert(CatVetDia(4, "Viernes"))
                 database.catVetDiaDao().insert(CatVetDia(5, "Sábado"))
 
+
+
                 database.catVetHorasDao().insert(CatVetHoras(0,"9:00-10:00"))
                 database.catVetHorasDao().insert(CatVetHoras(1, "10:00-11:00"))
                 database.catVetHorasDao().insert(CatVetHoras(2, "11:00-12:00"))
@@ -100,12 +102,6 @@ class MascotasAplication: Application() {
                 database.catVetHorasDao().insert(CatVetHoras(5, "15:00-16:00"))
                 database.catVetHorasDao().insert(CatVetHoras(5, "16:00-17:00"))
                 database.catVetHorasDao().insert(CatVetHoras(5, "17:00-18:00"))
-
-
-
-               // database.catEstatusVacunaDao().insert(CatEstatusVacuna(0, "Corrupta"))
-                //database.catEstatusVacunaDao().insert(CatEstatusVacuna(1, "Segura"))
-
 
                 appPreferences.setPreLoad(true)
             }
