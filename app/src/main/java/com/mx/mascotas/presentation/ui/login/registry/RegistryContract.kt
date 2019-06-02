@@ -5,6 +5,6 @@ interface RegistryContract {
     }
 
     interface ViewModel{
-        fun register(user: String,email : String, pwd : String, pwd2 : String, name: String, lastName: String,phone : String, type : Int)
+        fun register(user: String,email : String, pwd : String, pwd2 : String, name: String, lastName: String,phone : String,cedula : String, type : Int)
     }
 }

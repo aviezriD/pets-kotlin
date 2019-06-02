@@ -49,12 +49,18 @@ class RegistryFragment : BaseFragment<FragmentRegistryBinding,RegistryViewModel>
                 name.text.toString().trim(),
                 last_name.text.toString().trim(),
                 phone.text.toString().trim(),
+                cedula.text.toString().trim(),
                 type
             )
         }
 
         checks.setOnCheckedChangeListener { group, checkedId ->
             type =  if (checkedId== R.id.dueno) 0 else 1
+            if(checkedId==R.id.veterinario){
+                viewModelI.enable.set(true)
+            }else{
+                viewModelI.enable.set(false)
+            }
         }
     }
 

@@ -3,6 +3,7 @@ package com.mx.mascotas.presentation.ui.utils
 
 import android.net.Uri
 import android.util.Log
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.Spinner
@@ -113,4 +114,11 @@ import java.lang.Exception
     @BindingAdapter("app:selection")
     fun setItemSelect (spinner: Spinner?, position: Int){
         spinner?.setSelection(position,true)
+    }
+    @BindingAdapter( "app:visible")
+    fun setCedula (TextInputLayout: TextInputLayout?, enable: Boolean?){
+        TextInputLayout?.let { it.visibility=if(enable==true){
+            View.VISIBLE
+        } else View.GONE
+        }
     }
