@@ -1,5 +1,6 @@
 package com.mx.mascotas.data.repository.datasource.date
 
+import androidx.lifecycle.LiveData
 import com.google.firebase.database.FirebaseDatabase
 import com.mx.mascotas.data.utils.Constants
 import com.mx.mascotas.data.utils.RxFirebaseUtils
@@ -54,5 +55,15 @@ class DateDataFirebase (private var firebaseDatabase: FirebaseDatabase): DateDat
 
     }
 
+    override fun getListDatePending(id: String): Date {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
+    override fun getListDateByIdUser(id: String): Date {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun getDateById(id: Int): LiveData<com.mx.mascotas.data.database.entity.Date> {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 }

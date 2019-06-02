@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "date")
-class Date(@PrimaryKey var id: String, var idRol: Int, var idPet: Int, var idUser: Int,  var namePet: String,
+class Date(@PrimaryKey(autoGenerate = false) var id: String, var idRol: Int, var idPet: Int, var idUser: String,  var namePet: String,
            var typeService: String, var typeSubservice: String,
            var nameVeterinarian: String, var locationVeterinarian: String,
            var date: Long, var hour: Long, var description: String, var estatus: Int) {

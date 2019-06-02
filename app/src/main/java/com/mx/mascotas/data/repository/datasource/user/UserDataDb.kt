@@ -1,5 +1,6 @@
 package com.mx.mascotas.data.repository.datasource.user
 
+import androidx.lifecycle.LiveData
 import com.mx.mascotas.data.database.dao.UserDao
 import com.mx.mascotas.data.database.entity.User
 import com.mx.mascotas.data.repository.datasource.BaseDb
@@ -10,5 +11,7 @@ class UserDataDb(private val daoUser: UserDao) : BaseDb<User>(daoUser), UserData
         return daoUser.getUserSingle(user,type).toObservable()
     }
 
-
+    override fun getUserByIdRole(idRole: Int): LiveData<List<User>> {
+        return daoUser.getListUserByIdRole(idRole)
+    }
 }

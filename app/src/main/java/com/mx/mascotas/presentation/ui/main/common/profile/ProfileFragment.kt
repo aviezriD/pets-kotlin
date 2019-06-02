@@ -26,13 +26,5 @@ class ProfileFragment:BaseFragment<com.mx.mascotas.databinding.FragmentProfileBi
         return viewModelI
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        subcribeToLiveData()
-    }
 
-    fun subcribeToLiveData(){
-
-
-    }
 }

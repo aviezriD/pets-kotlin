@@ -1,5 +1,7 @@
 package com.mx.mascotas.data.repository
 
+import androidx.lifecycle.LiveData
+import com.mx.mascotas.data.database.entity.Role
 import com.mx.mascotas.data.database.entity.User
 import com.mx.mascotas.data.repository.datasource.user.UserDataFactory
 import com.mx.mascotas.domain.repository.UserRepository
@@ -26,4 +28,7 @@ class UserDataRepository: UserRepository {
         userDb.insert(user)
     }
 
+    override fun getUserByIdRole(idRole: Int): LiveData<List<User>> {
+        return userDb.getUserByIdRole(idRole)
+    }
 }

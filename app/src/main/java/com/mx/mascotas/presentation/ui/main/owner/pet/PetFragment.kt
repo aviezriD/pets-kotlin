@@ -56,6 +56,7 @@ class PetFragment: BaseFragment<FragmentPetBinding,PetViewModel>(),PetContract.N
              id = it.getString("id","")
          }
         subcribeToLiveData()
+
     }
 
     override fun getViewModel(): PetViewModel {
@@ -116,9 +117,7 @@ class PetFragment: BaseFragment<FragmentPetBinding,PetViewModel>(),PetContract.N
                 } else {
                     Toast.makeText(it,"La camara no esta disponible",Toast.LENGTH_SHORT).show()
                 }
-
             }
-
         }
 
         spinner.onItemSelectedListener = this
@@ -128,8 +127,7 @@ class PetFragment: BaseFragment<FragmentPetBinding,PetViewModel>(),PetContract.N
 
     }
 
-    override fun onNothingSelected(parent: AdapterView<*>?) {
-    }
+    override fun onNothingSelected(parent: AdapterView<*>?) {}
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         parent?.let {
@@ -138,7 +136,6 @@ class PetFragment: BaseFragment<FragmentPetBinding,PetViewModel>(),PetContract.N
                 is CatPetSize -> typeSize = (it.selectedItem  as CatPetSize).id
             }
         }
-
     }
 
     fun subcribeToLiveData(){
@@ -181,13 +178,15 @@ class PetFragment: BaseFragment<FragmentPetBinding,PetViewModel>(),PetContract.N
                 type = it.type
                 typeSize = it.typeSize
                 sex = it.sex
+                if (sex){
+                    w.isChecked = true
+                }
                 pet_allergy.append(it.allergy)
                 date.append(Utils.longToDate(it.dateBorn))
                 pet_signs.append(it.signs)
                 button4?.text = "CAMBIAR FOTO"
                 button5?.text = "ACTUALIZAR"
                 viewModelI.setIndices(it.type,it.typeSize)
-
             }
         })
     }

@@ -31,7 +31,7 @@ class SignViewModel(scheduleProvider: ScheduleProvider
                                     1 -> result.value = Pair(it,"") // succes login
                                     else -> result.value = Pair(it,Constants.SIGN.INCORRECT_PASSWORD) //  incorrect password
                                 }
-                            },{
+                            },{it.printStackTrace()
                                 result.value = Pair(-1,Constants.SIGN.ERROR)
                             })
                     )

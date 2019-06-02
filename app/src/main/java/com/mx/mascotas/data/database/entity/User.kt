@@ -38,4 +38,8 @@ data class User(var id : Int = 0,
         result["password"] = password
         return  result
     }
+
+    override fun toString(): String {
+        return name
+    }
 }

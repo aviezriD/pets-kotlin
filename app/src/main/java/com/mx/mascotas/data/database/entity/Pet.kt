@@ -36,4 +36,8 @@ data class Pet(@PrimaryKey var id : String = "",
         result["photo"] = photo
         return result
     }
+
+    override fun toString(): String {
+        return name
+    }
 }

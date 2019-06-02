@@ -41,6 +41,7 @@
                     android:id="@+id/spinner" android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
                     app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+                    app:adapter="@{registerDateViewModel.listPet}"
                     app:layout_constraintTop_toBottomOf="@+id/textView10" android:layout_marginTop="8dp"/>
 
             <TextView
@@ -58,6 +59,7 @@
                     android:id="@+id/spinnerServicios" android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
                     app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+                    app:adapter="@{registerDateViewModel.listService}"
                     app:layout_constraintTop_toBottomOf="@+id/textServicios" android:layout_marginTop="8dp"/>
 
             <TextView
@@ -78,7 +80,6 @@
                       android:layout_width="0dp"
                       android:layout_height="wrap_content"
                       android:text="@string/service1"
-                      android:onClick="onCheckboxClicked"
                       android:layout_marginTop="8dp"
                       app:layout_constraintTop_toBottomOf="@+id/textSex"
                       app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="24dp"
@@ -87,7 +88,6 @@
                       android:layout_width="0dp"
                       android:layout_height="wrap_content"
                       android:text="@string/service2"
-                      android:onClick="onCheckboxClicked"
                       android:layout_marginTop="8dp"
                       app:layout_constraintTop_toBottomOf="@+id/checkbox_bano"
                       app:layout_constraintStart_toStartOf="parent"
@@ -96,7 +96,6 @@
                       android:layout_width="0dp"
                       android:layout_height="wrap_content"
                       android:text="@string/service3"
-                      android:onClick="onCheckboxClicked"
                       android:layout_marginTop="8dp"
                       app:layout_constraintTop_toBottomOf="@+id/checkbox_corte"
                       app:layout_constraintStart_toStartOf="parent"
@@ -117,6 +116,7 @@
                     android:id="@+id/spinnerVet" android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
                     app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+                    app:adapter="@{registerDateViewModel.listVet}"
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout21" android:layout_marginTop="8dp"/>
 
 
@@ -133,6 +133,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/spinnerFechaServicio" android:layout_marginEnd="8dp"
+                    app:adapter="@{registerDateViewModel.listVetDay}"
                     android:layout_marginRight="8dp"
                     app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
@@ -152,6 +153,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/spinnerHorarioServicio" android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
+                    app:adapter="@{registerDateViewModel.listVetHour}"
                     app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
                     app:layout_constraintTop_toBottomOf="@+id/servicio_horario" android:layout_marginTop="8dp"/>
@@ -168,16 +170,17 @@
                 <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/description_register"
                         android:hint="@string/pet_observaciones"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                     android:text="@string/registry_button"
                     android:layout_width="0dp"
-                    android:layout_height="38dp"
+                    android:layout_height="wrap_content"
                     android:id="@+id/button2"
                     app:layout_constraintEnd_toEndOf="parent"
-                    style="@style/Widget.AppCompat.Button.Colored" android:layout_marginBottom="1dp"
+                    style="@style/Widget.AppCompat.Button.Colored" android:layout_marginBottom="8dp"
                     app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="24dp"
                     app:layout_constraintTop_toBottomOf="@+id/descripcion_cita"
                     app:layout_constraintVertical_bias="1.0"

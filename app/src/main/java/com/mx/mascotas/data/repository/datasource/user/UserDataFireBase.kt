@@ -1,5 +1,6 @@
 package com.mx.mascotas.data.repository.datasource.user
 
+import androidx.lifecycle.LiveData
 import com.google.firebase.database.FirebaseDatabase
 import com.mx.mascotas.data.database.entity.User
 import com.mx.mascotas.data.utils.Constants
@@ -59,4 +60,7 @@ class UserDataFireBase(private var firebaseDatabase: FirebaseDatabase): UserData
             .flatMap { RxFirebaseUtils.apply(firebaseDatabase.reference.child(pwd).removeValue()) }
     }
 
+    override fun getUserByIdRole(idRole: Int): LiveData<List<User>> {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 }
