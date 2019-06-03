@@ -142,6 +142,11 @@
     <string name="vet_mi_agenda">Mi agenda</string>
     <string name="date_welcome_owner">Hola, agenda una cita para tu mascota!</string>
 
+    <!--Veterinarias-->
+    <string name="diaInicio">Día inicio</string>
+    <string name="diaFin">Día fin</string>
+    <string name="horaInicio">Hora inicio</string>
+    <string name="horaFin">Hora fin</string>
 
 
 

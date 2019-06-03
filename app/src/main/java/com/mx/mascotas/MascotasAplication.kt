@@ -103,6 +103,13 @@ class MascotasAplication: Application() {
                 database.catVetHorasDao().insert(CatVetHoras(5, "16:00-17:00"))
                 database.catVetHorasDao().insert(CatVetHoras(5, "17:00-18:00"))
 
+                database.catSubserviceDao().insert(CatSubService( 0, 1, "Baño"))
+                database.catSubserviceDao().insert(CatSubService( 1,1, "Corte de pelo"))
+                database.catSubserviceDao().insert(CatSubService( 2,1, "Limpieza de oídos"))
+
+                database.catVetMonthDao().insert(CatVetMonth(0, "Junio"))
+
+
                 appPreferences.setPreLoad(true)
             }
         }
