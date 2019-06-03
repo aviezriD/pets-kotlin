@@ -40,7 +40,7 @@
     <!--main-->
     <string name="drawer_open">Open Navigation</string>
     <string name="drawer_close">Close Navigation</string>
-    <string name="close_sesion">Cerrar Sessión</string>
+    <string name="close_sesion">Cerrar Sesión</string>
 
 
     <!--pet-->
@@ -93,9 +93,9 @@
     <string name="profile_name">Nombre</string>
     <string name="profile_last_name">Apellido Paterno</string>
     <string name="profile_email">Email</string>
-    <string name="profile_cedula">Cédula Profesional</string>
     <string name="profile_telefo">Teléfono Celular</string>
     <string name="profile_button">Actualizar</string>
+    <string name="profile_cedula">Cédula</string>
 
     <!--<string name="profile_"> </string>-->
 
