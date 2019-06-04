@@ -106,7 +106,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textInputLayout21"
-                    app:layout_constraintTop_toBottomOf="@+id/checkbox_oidos" app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkbox_oidos"
+                    app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginLeft="16dp" android:layout_marginStart="16dp" android:layout_marginTop="8dp"/>
 
 
@@ -121,30 +122,53 @@
 
 
             <TextView
-                    android:text="@string/servicio_fecha"
-                    android:layout_width="wrap_content"
+                    android:text="@string/servicio_mes"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/servicio_fecha"
-                    app:layout_constraintTop_toBottomOf="@+id/spinnerVet" app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/servicio_mes"
+                    app:layout_constraintTop_toBottomOf="@+id/spinnerVet"
+                    android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginLeft="16dp" android:layout_marginStart="16dp"/>
+
+
+            <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinnerMesServicio" android:layout_marginEnd="8dp"
+                    app:adapter="@{registerDateViewModel.listVetMonth}"
+                    android:layout_marginRight="8dp"
+                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/servicio_mes" android:layout_marginTop="8dp"/>
+
+
+            <TextView
+                    android:text="@string/servicio_dia"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/servicio_dia"
+                    app:layout_constraintTop_toBottomOf="@+id/spinnerMesServicio"
+                    app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginLeft="16dp" android:layout_marginStart="16dp" android:layout_marginTop="8dp"/>
 
 
             <Spinner
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinnerFechaServicio" android:layout_marginEnd="8dp"
+                    android:id="@+id/spinnerDiaServicio" android:layout_marginEnd="8dp"
                     app:adapter="@{registerDateViewModel.listVetDay}"
                     android:layout_marginRight="8dp"
                     app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
-                    app:layout_constraintTop_toBottomOf="@+id/servicio_fecha" android:layout_marginTop="8dp"/>
+                    app:layout_constraintTop_toBottomOf="@+id/servicio_dia" android:layout_marginTop="8dp"/>
 
             <TextView
                     android:text="@string/servicio_horario"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/servicio_horario"
-                    app:layout_constraintTop_toBottomOf="@+id/spinnerFechaServicio" app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/spinnerDiaServicio"
+                    app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginLeft="16dp" android:layout_marginStart="16dp" android:layout_marginTop="8dp"/>
 
 
@@ -153,7 +177,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/spinnerHorarioServicio" android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
-                    app:adapter="@{registerDateViewModel.listVetHour}"
+                    app:adapter="@{registerDateViewModel.listVetHourDisp}"
                     app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
                     app:layout_constraintTop_toBottomOf="@+id/servicio_horario" android:layout_marginTop="8dp"/>
@@ -186,8 +210,6 @@
                     app:layout_constraintVertical_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
                     android:layout_marginStart="8dp" android:layout_marginRight="8dp" android:layout_marginEnd="8dp"/>
-
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

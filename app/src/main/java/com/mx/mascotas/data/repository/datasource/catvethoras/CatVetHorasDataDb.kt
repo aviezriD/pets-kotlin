@@ -9,6 +9,13 @@ class CatVetHorasDataDb (val catVetHorasDao:CatVetHorasDao): CatVetHorasData<Uni
     override fun getListCatVetHoras(): LiveData<List<CatVetHoras>> {
         return catVetHorasDao.getListCatVetHoras()
     }
+
+
+    override fun getListCatVetHorasDispo(): LiveData<List<CatVetHoras>> {
+        return catVetHorasDao.getListCatVetHorasDispo(estatus = true)
+
+    }
+
     override fun insert(obj: CatVetHoras) {
         catVetHorasDao.insert(obj)
     }

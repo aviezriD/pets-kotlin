@@ -4,9 +4,11 @@ import androidx.lifecycle.LiveData
 import com.mx.mascotas.data.database.entity.CatService
 import com.mx.mascotas.data.database.entity.CatVetDia
 import com.mx.mascotas.data.database.entity.CatVetHoras
+import com.mx.mascotas.data.database.entity.CatVetMonth
 import com.mx.mascotas.data.repository.datasource.catservices.CatServicesDataFactory
 import com.mx.mascotas.data.repository.datasource.catvetdia.CatVetDiaDataFactory
 import com.mx.mascotas.data.repository.datasource.catvethoras.CatVetHorasDataFactory
+import com.mx.mascotas.data.repository.datasource.catvetmonth.CatVetMonthDataFactory
 import com.mx.mascotas.domain.repository.VetRepository
 
 class VetDataRepository: VetRepository {
@@ -16,6 +18,9 @@ class VetDataRepository: VetRepository {
 
     private val catVetDayFactory by lazy { CatVetDiaDataFactory() }
     private val catVetDayDb by lazy { catVetDayFactory.createCatVetDiaDataDb() }
+
+    private val catVetMonthFactory by lazy { CatVetMonthDataFactory() }
+    private val catVetMonthDb by lazy { catVetMonthFactory.createCatVetMonthDataDb() }
 
     private val catVetHourFactory by lazy { CatVetHorasDataFactory() }
     private val catVetHourDb by lazy { catVetHourFactory.createCatVetHorasDataDb() }
@@ -27,6 +32,15 @@ class VetDataRepository: VetRepository {
 
     override fun getListCatVetHoras(): LiveData<List<CatVetHoras>> {
         return catVetHourDb.getListCatVetHoras()
+    }
+
+    override fun getListCatVetHorasDispo(): LiveData<List<CatVetHoras>> {
+        return catVetHourDb.getListCatVetHorasDispo()
+    }
+
+    override fun getListCatVetMonth(): LiveData<List<CatVetMonth>> {
+        return catVetMonthDb.getListCatVetMonth()
+
     }
 
     override fun getListCatVetDia(): LiveData<List<CatVetDia>> {

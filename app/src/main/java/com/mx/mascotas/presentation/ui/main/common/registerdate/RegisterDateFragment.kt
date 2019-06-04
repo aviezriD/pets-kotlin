@@ -29,6 +29,7 @@ class RegisterDateFragment : BaseFragment <FragmentRegistroCitaDuenoBinding, Reg
     var namePet =""
     var service = ""
     var subService = ""
+    var month = ""
         override fun getIdLayout(): Int {
 
         return R.layout.fragment_registro_cita_dueno
@@ -69,7 +70,7 @@ class RegisterDateFragment : BaseFragment <FragmentRegistroCitaDuenoBinding, Reg
         }
 
         button2.setOnClickListener {
-            viewModelI.registerDate(idPet,namePet,service,subService,"","","","",description_register.text.toString().trim())
+            viewModelI.registerDate(idPet,namePet,service,subService,month,"","","","",description_register.text.toString().trim())
         }
     }
 
@@ -94,9 +95,20 @@ class RegisterDateFragment : BaseFragment <FragmentRegistroCitaDuenoBinding, Reg
                 viewModelI.addCatVetDia(it)
             }
         })
+        viewModelI.listVetMonthLive.observe(this, Observer {
+            it?.let {
+                viewModelI.addCatVetMonth(it)
+            }
+        })
         viewModelI.listVetHourLive.observe(this, Observer {
             it?.let {
                 viewModelI.addCatVetHoras(it)
+            }
+        })
+
+        viewModelI.listVetHourDispoLive.observe(this, Observer {
+            it?.let {
+                viewModelI.addCatVetHorasDisp(it)
             }
         })
     }

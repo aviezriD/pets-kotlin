@@ -133,6 +133,8 @@
     <string name="service3">Limpieza de oídos</string>
     <string name="pet_veterinario">Veterinario</string>
     <string name="servicio_fecha">Fecha</string>
+    <string name="servicio_mes">Mes</string>
+    <string name="servicio_dia">Día</string>
     <string name="servicio_horario">Hora</string>
     <string name="pet_observaciones">Observaciones</string>
 

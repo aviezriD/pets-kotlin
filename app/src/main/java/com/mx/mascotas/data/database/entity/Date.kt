@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 class Date(@PrimaryKey(autoGenerate = false) var id: String, var idRol: Int, var idPet: Int, var idUser: String,  var namePet: String,
            var typeService: String, var typeSubservice: String,
            var nameVeterinarian: String, var locationVeterinarian: String,
-           var date: Long, var hour: Long, var description: String, var estatus: Int) {
+           var month: String, var date: Long, var hour: Long,  var description: String, var estatus: Int) {
 
     fun toMap (): Map<String,Any>{
         val detailsDate = HashMap<String,Any>()
@@ -16,6 +16,7 @@ class Date(@PrimaryKey(autoGenerate = false) var id: String, var idRol: Int, var
         detailsDate["typeSubservice"] = typeSubservice
         detailsDate["nameVeterinarian"] = nameVeterinarian
         detailsDate["locationVeterinarian"] = locationVeterinarian
+        detailsDate["month"] = month
         detailsDate["date"] = date
         detailsDate["hour"] = hour
         detailsDate["description"] = description
