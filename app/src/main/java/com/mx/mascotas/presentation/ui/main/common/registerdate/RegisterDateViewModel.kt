@@ -20,15 +20,21 @@ BaseViewModel<RegisterDateContract.Navigator, RegisterDateUseCase> (schedule, na
 
     var listPet = ObservableArrayList<Pet>()
     var listService = ObservableArrayList<CatService>()
+
+
     var listVet = ObservableArrayList<User>()
     var listVetDay = ObservableArrayList<CatVetDia>()
     var listVetHour = ObservableArrayList<CatVetHoras>()
+    var listVetHourDisp = ObservableArrayList<CatVetHoras>()
+    var listVetMonth = ObservableArrayList<CatVetMonth>()
 
     var listPetLive : LiveData<List<Pet>> = MutableLiveData()
     var listServiceLive : LiveData<List<CatService>>  = MutableLiveData()
     var listVetLive :LiveData<List<User>> = MutableLiveData()
     var listVetDayLive :LiveData<List<CatVetDia>> = MutableLiveData()
     var listVetHourLive :LiveData<List<CatVetHoras>> = MutableLiveData()
+    var listVetMonthLive :LiveData<List<CatVetMonth>> = MutableLiveData()
+    var listVetHourDispoLive : LiveData<List<CatVetHoras>> = MutableLiveData()
 
     init {
         listPetLive = useCase.getListPet()
@@ -37,7 +43,8 @@ BaseViewModel<RegisterDateContract.Navigator, RegisterDateUseCase> (schedule, na
 
         listVetDayLive = useCase.getListCatVetDia()
         listVetHourLive = useCase.getListCatVetHoras()
-
+        listVetMonthLive = useCase.getListCatVetMonth()
+        listVetHourDispoLive = useCase.getListCatVetHorasDispo()
     }
 
     override fun addPet(list: List<Pet>) {
@@ -50,6 +57,7 @@ BaseViewModel<RegisterDateContract.Navigator, RegisterDateUseCase> (schedule, na
         listVet.addAll(list)
     }
 
+
     override fun addCatService(list: List<CatService>) {
         listService.clear()
         listService.addAll(list)
@@ -60,11 +68,20 @@ BaseViewModel<RegisterDateContract.Navigator, RegisterDateUseCase> (schedule, na
         listVetHour.addAll(list)
     }
 
+    override fun addCatVetHorasDisp(list: List<CatVetHoras>) {
+        listVetHourDisp.clear()
+        listVetHourDisp.addAll(list)
+    }
+
     override fun addCatVetDia(list: List<CatVetDia>) {
         listVetDay.clear()
         listVetDay.addAll(list)
     }
+    override fun addCatVetMonth(list: List<CatVetMonth>) {
+        listVetMonth.clear()
+        listVetMonth.addAll(list)
 
+    }
     override fun registerDate(
         idPet: Int,
         namePet: String,
@@ -73,12 +90,13 @@ BaseViewModel<RegisterDateContract.Navigator, RegisterDateUseCase> (schedule, na
         nameVet: String,
         location: String,
         date: String,
+        month: String,
         hour: String,
         description: String
     ) {
         val date = Date(idPet = idPet,namePet = namePet, typeService =  typerService, typeSubservice = subType,
         nameVeterinarian = "kota",locationVeterinarian = "Naranjo número 447", date = java.util.Date().time,
-            hour = java.util.Date().hours.toLong(),description = description ,estatus = 0,id = "",idRol = 1,idUser = "")
+            month = month, hour = java.util.Date().hours.toLong(),description = description ,estatus = 0,id = "",idRol = 1,idUser = "")
         scope.launch {
             useCase.insert(date)
         }

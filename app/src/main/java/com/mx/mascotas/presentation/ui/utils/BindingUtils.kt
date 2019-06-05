@@ -104,8 +104,19 @@ import java.lang.Exception
     fun setListCatVetHoras(spinner: Spinner?, list: List<CatVetHoras>){
     spinner?.adapter = ArrayAdapter<CatVetHoras>(spinner?.context,R.layout.support_simple_spinner_dropdown_item,list)
     }
+
     @BindingAdapter("app:adapter")
-    fun setListCatVetCatVetDia(spinner: Spinner?, list: List<CatVetDia>){
+        fun setListCatVetHorasDispo(spinner: Spinner?, list: List<CatVetHoras>){
+        spinner?.adapter = ArrayAdapter<CatVetHoras>(spinner?.context,R.layout.support_simple_spinner_dropdown_item,list)
+    }
+    @BindingAdapter("app:adapter")
+    fun setListCatVetMonth(spinner: Spinner?, list: List<CatVetMonth>){
+        spinner?.adapter = ArrayAdapter<CatVetMonth>(spinner?.context,R.layout.support_simple_spinner_dropdown_item,list)
+    }
+
+
+    @BindingAdapter("app:adapter")
+    fun setListCatVetDia(spinner: Spinner?, list: List<CatVetDia>){
     spinner?.adapter = ArrayAdapter<CatVetDia>(spinner?.context,R.layout.support_simple_spinner_dropdown_item,list)
     }
 

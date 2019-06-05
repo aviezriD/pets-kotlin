@@ -64,6 +64,9 @@ class RegistryFragment : BaseFragment<FragmentRegistryBinding,RegistryViewModel>
         }
     }
 
+
+
+
     fun subcribeToLiveData(){
         viewModelI.validatePassword.observe(this, Observer {
             textInputLayout6?.error = it

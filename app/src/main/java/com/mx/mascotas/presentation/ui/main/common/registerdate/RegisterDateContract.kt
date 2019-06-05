@@ -12,6 +12,8 @@ interface RegisterDateContract {
         fun addCatService(list: List<CatService>)
         fun addCatVetHoras(list: List<CatVetHoras>)
         fun addCatVetDia(list: List<CatVetDia>)
-        fun registerDate(idPet : Int, namePet : String, typerService : String, subType : String,nameVet: String, location : String, date: String, hour : String, description : String)
+        fun addCatVetHorasDisp(list: List<CatVetHoras>)
+        fun addCatVetMonth(list: List<CatVetMonth>)
+        fun registerDate(idPet : Int, namePet : String, typerService : String, subType : String,nameVet: String, location : String,month: String, date: String, hour : String, description : String)
     }
 }

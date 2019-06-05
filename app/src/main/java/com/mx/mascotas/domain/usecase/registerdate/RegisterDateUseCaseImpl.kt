@@ -10,6 +10,10 @@ class RegisterDateUseCaseImpl(val userRepository: UserRepository, val petReposit
         return petRepository.getListPetByName(preferenceRepository.getUserName())
     }
 
+    override fun getListCatVetMonth(): LiveData<List<CatVetMonth>> {
+        return vetRepository.getListCatVetMonth()
+    }
+
     override fun getListVet(): LiveData<List<User>> {
         return userRepository.getUserByIdRole(1)
     }
@@ -22,6 +26,9 @@ class RegisterDateUseCaseImpl(val userRepository: UserRepository, val petReposit
         return vetRepository.getListCatVetHoras()
     }
 
+    override fun getListCatVetHorasDispo(): LiveData<List<CatVetHoras>> {
+        return vetRepository.getListCatVetHorasDispo()
+    }
     override fun getListCatVetDia(): LiveData<List<CatVetDia>> {
         return vetRepository.getListCatVetDia()
     }

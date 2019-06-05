@@ -8,4 +8,6 @@ class HelpViewModel(scheduleProvider: ScheduleProvider,
                     navigator: HelpContract.Navigator,
                     useCase: HelpUseCase):
     BaseViewModel<HelpContract.Navigator,HelpUseCase>(scheduleProvider,navigator,useCase) {
+
+    val
 }

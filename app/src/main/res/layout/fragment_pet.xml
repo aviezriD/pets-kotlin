@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/textView10"
                     app:layout_constraintTop_toBottomOf="@+id/textView8" app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginLeft="16dp" android:layout_marginStart="16dp"/>
+                    android:layout_marginLeft="16dp" android:layout_marginStart="16dp" android:layout_marginTop="32dp"/>
             <Spinner
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

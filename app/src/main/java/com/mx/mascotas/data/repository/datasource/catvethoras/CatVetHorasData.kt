@@ -6,4 +6,6 @@ import com.mx.mascotas.data.repository.datasource.BaseData
 
 interface CatVetHorasData<R>: BaseData<CatVetHoras, R> {
         fun getListCatVetHoras(): LiveData<List<CatVetHoras>>
+        fun getListCatVetHorasDispo(): LiveData<List<CatVetHoras>>
+
     }

@@ -8,6 +8,8 @@ interface RegisterDateUseCase {
     fun getListVet(): LiveData<List<User>>
     fun getListServices(): LiveData<List<CatService>>
     fun getListCatVetHoras(): LiveData<List<CatVetHoras>>
+    fun getListCatVetHorasDispo(): LiveData<List<CatVetHoras>>
+    fun getListCatVetMonth() : LiveData<List<CatVetMonth>>
     fun getListCatVetDia(): LiveData<List<CatVetDia>>
     fun insert(date: Date)
 }

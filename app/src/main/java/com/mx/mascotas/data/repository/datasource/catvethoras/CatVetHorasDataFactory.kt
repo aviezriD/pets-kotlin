@@ -4,10 +4,10 @@ import com.mx.mascotas.MascotasAplication
 
 
 class CatVetHorasDataFactory {
-    object Resource{
+    object Resourse{
         val petCatVetHorasDataBase = CatVetHorasDataDb(MascotasAplication.application.database.catVetHorasDao())
     }
 
-    fun createCatVetHorasDataDb () = Resource.petCatVetHorasDataBase
+    fun createCatVetHorasDataDb () = Resourse.petCatVetHorasDataBase
 }
 
