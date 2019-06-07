@@ -6,14 +6,14 @@
     <string name="veterinario">Veterinario</string>
 
     <!--sign-->
-    <string name="user">Nombre de Usuario </string>
-    <string name="password">Contraseña </string>
-    <string name="initSesion">Iniciar Sesión </string>
+    <string name="user">Nombre de Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="initSesion">Iniciar Sesión</string>
 
-    <string name="forget">¿Olvidaste tus datos de inicio de sesión? </string>
+    <string name="forget">¿Olvidaste tus datos de inicio de sesión?</string>
     <string name="help_sign">Obten ayuda.</string>
 
-    <string name="noAccount">¿No tienes cuenta? </string>
+    <string name="noAccount">¿No tienes cuenta?</string>
     <string name="registry">Regístrate</string>
 
 
@@ -35,7 +35,9 @@
 
     <!--help-->
     <string name="title_help">Recuperar Usuario y Contraseña</string>
-    <string name="label_help">Ingresa el correo con el que te registraste y te enviaremos una liga con tus datos para volver a acceder a Mascota.</string>
+    <string name="label_help">Ingresa el correo con el que te registraste y te enviaremos una liga con tus datos para
+        volver a acceder a Mascota.
+    </string>
     <string name="button_help">Enviar</string>
 
     <!--main-->
@@ -64,7 +66,7 @@
     <string name="pet_mother">Madre</string>
     <string name="pet_allergy">Alergia</string>
     <string name="pet_conditions">Afecciones</string>
-    <string name="pet_weight">Peso (KG) </string>
+    <string name="pet_weight">Peso (KG)</string>
     <string name="pet_description">Descripción</string>
     <string name="pet_photo">Seleccionar foto</string>
     <string name="pet_registry">Registrar</string>
@@ -123,8 +125,7 @@
     <string name="nextStep">Siguiente</string>
 
 
-
-<!--Citas-->
+    <!--Citas-->
     <string name="cita_title">Registro de cita</string>
     <string name="pet_sub_cita">Ingresa los datos de la cita que desear agendar</string>
     <string name="pet_mascota">Mascota</string>
@@ -152,9 +153,6 @@
     <string name="horaFin">Hora fin</string>
 
 
-
-
-
     <!--Datepicker-->
 
     <string name="titlulo_pickers">Obtener fecha y hora</string>
@@ -163,24 +161,13 @@
     <string name="formato_hora">hh:mm</string>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!--tip-->
     <string name="tip_welcome">Hola bienvenido,\naun no hay tips</string>
     <string name="pet_peso">Peso Kg</string>
     <string name="servicios">Servicios</string>
     <string name="sexo_de_la_mascota">Sexo de la mascota:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <!--<string name="tip_"></string>-->
 </resources>

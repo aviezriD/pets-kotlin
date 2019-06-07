@@ -21,29 +21,28 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".presentation.ui.login.LoginActivity"
-                  android:windowSoftInputMode="stateAlwaysHidden">
+        <activity android:name=".common.login_common">
+        </activity>
+        <activity
+                android:name=".presentation.ui.login.LoginActivity"
+                android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-
         </activity>
         <activity android:name=".presentation.ui.main.MainActivity">
-
         </activity>
+
         <provider
                 android:name="androidx.core.content.FileProvider"
-                android:grantUriPermissions="true"
+                android:authorities="${applicationId}"
                 android:exported="false"
-                android:authorities="${applicationId}">
-
+                android:grantUriPermissions="true">
             <meta-data
                     android:name="android.support.FILE_PROVIDER_PATHS"
                     android:resource="@xml/file_provider_paths"/>
-
-
         </provider>
     </application>
 
