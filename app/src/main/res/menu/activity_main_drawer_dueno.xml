@@ -20,8 +20,13 @@
                 android:title="Agendar citas" />
             <item
                 android:id="@+id/misCitas"
-                android:icon="@drawable/ic_icon_doctor"
+                android:icon="@drawable/ic_event_available_black_24dp"
                 android:title="Mis citas" />
+
+            <item
+                    android:id="@+id/Historial"
+                    android:icon="@drawable/ic_event_note_black_24dp"
+                    android:title="Historial médico" />
         </menu>
 
     </item>
