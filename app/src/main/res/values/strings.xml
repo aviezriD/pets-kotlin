@@ -21,7 +21,7 @@
     <string name="title_registro">Registro de usuarios</string>
     <string name="name">Nombre(s)</string>
     <string name="last_name">Apellidos</string>
-    <string name="phone">Telefono</string>
+    <string name="phone">Teléfono</string>
     <string name="app">Apellido Paterno</string>
     <string name="apm">Apellido Materno</string>
     <string name="nickname">Nombre de usuario</string>
@@ -30,7 +30,8 @@
     <string name="passwprd">Contraseña</string>
     <string name="validatepdw">Valida tu contraseña</string>
     <string name="photo">Foto</string>
-    <string name="registry_button">Registrar </string>
+    <string name="registry_button">Registrar</string>
+    <string name="cedula">Cédula Profesional</string>
 
     <!--help-->
     <string name="title_help">Recuperar Usuario y Contraseña</string>

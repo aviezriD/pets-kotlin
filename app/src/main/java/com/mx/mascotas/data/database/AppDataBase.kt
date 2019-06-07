@@ -41,7 +41,7 @@ import com.mx.mascotas.data.database.entity.User
     abstract fun catPetSizeDao() : CatPetSizeDao
     abstract fun dateDao() : DateDao
     abstract fun catDateStatusDao() : CatDateStatusDao
-    abstract  fun catServicesDao() : CatServicesDao
+    abstract fun catServicesDao() : CatServicesDao
     abstract fun veterinaryDao() :VeterinaryDao
     abstract fun catVetDiaDao() : CatVetDiaDao
     abstract fun catVetHorasDao() : CatVetHorasDao
